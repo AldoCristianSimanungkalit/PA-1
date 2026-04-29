@@ -20,8 +20,8 @@
     }
 </style>
 
-<div class="card">
-    <div class="card-header">
+<div class="card shadow-sm">
+    <div class="card-header bg-white">
         <h5 class="mb-0">
             <i class="fas fa-plus-circle me-2" style="color: #c6a43b;"></i>
             Tambah Galeri Baru
@@ -32,6 +32,7 @@
             @csrf
             
             <div class="row">
+                {{-- Judul Galeri --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label required">Judul</label>
                     <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" 
@@ -41,21 +42,22 @@
                     @enderror
                 </div>
                 
+                {{-- Kategori (SINKRON DENGAN TELE, EFRATA, SIHOTANG) --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
-                        <option value="">-- Pilih Kategori --</option>
-                        <option value="Balige" {{ old('kategori') == 'Balige' ? 'selected' : '' }}>🏙️ Balige</option>
-                        <option value="Meat" {{ old('kategori') == 'Meat' ? 'selected' : '' }}>🏝️ Meat</option>
-                        <option value="Batu Bahisan" {{ old('kategori') == 'Batu Bahisan' ? 'selected' : '' }}>🪨 Batu Bahisan</option>
-                        <option value="Liang Sipege" {{ old('kategori') == 'Liang Sipege' ? 'selected' : '' }}>🕳️ Liang Sipege</option>
+                        <option value="">-- Pilih Kategori Wisata --</option>
+                        <option value="Tele" {{ old('kategori') == 'Tele' ? 'selected' : '' }}>⛰️ Tele</option>
+                        <option value="Efrata" {{ old('kategori') == 'Efrata' ? 'selected' : '' }}>🌊 Efrata</option>
+                        <option value="Sihotang" {{ old('kategori') == 'Sihotang' ? 'selected' : '' }}>🏡 Sihotang</option>
                     </select>
-                    <small class="text-muted">Pilih kategori untuk menentukan folder penyimpanan gambar</small>
+                    <small class="text-muted">Folder: public/storage/galeri/[kategori]</small>
                     @error('kategori')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 
+                {{-- Deskripsi --}}
                 <div class="col-md-12 mb-3">
                     <label class="form-label required">Deskripsi</label>
                     <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" 
@@ -65,28 +67,33 @@
                     @enderror
                 </div>
                 
+                {{-- Upload Gambar --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label required">Gambar</label>
                     <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror" 
                            accept="image/jpeg,image/png,image/jpg" required id="inputGambar">
                     <small class="text-muted">Format: JPG, PNG. Max: 2MB</small>
+                    
                     <div class="preview-container" id="previewContainer">
                         <img id="previewImage" class="preview-image" alt="Preview Gambar">
                     </div>
+
                     @error('gambar')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 
+                {{-- Lokasi --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Lokasi</label>
                     <input type="text" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" 
-                           value="{{ old('lokasi') }}" placeholder="Contoh: Desa Sibandang, Pulau Samosir">
+                           value="{{ old('lokasi') }}" placeholder="Contoh: Sianjur Mulamula, Samosir">
                     @error('lokasi')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 
+                {{-- Tanggal Foto --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Tanggal Foto</label>
                     <input type="date" name="tanggal_foto" class="form-control @error('tanggal_foto') is-invalid @enderror" 
@@ -96,15 +103,14 @@
                     @enderror
                 </div>
                 
+                {{-- Status --}}
                 <div class="col-md-6 mb-3">
                     <div class="form-check mt-4">
                         <input class="form-check-input" type="checkbox" name="status" value="1" 
-                               id="statusCheck" {{ old('status') ? 'checked' : 'checked' }}>
+                               id="statusCheck" {{ old('status', '1') == '1' ? 'checked' : '' }}>
                         <label class="form-check-label" for="statusCheck">
                             <i class="fas fa-check-circle text-success me-1"></i> Aktifkan
                         </label>
-                        <br>
-                        <small class="text-muted">Jika diaktifkan, galeri akan ditampilkan di halaman publik</small>
                     </div>
                 </div>
             </div>
@@ -124,7 +130,6 @@
 </div>
 
 <script>
-    // Preview gambar sebelum upload
     document.getElementById('inputGambar').addEventListener('change', function(e) {
         const file = e.target.files[0];
         const previewContainer = document.getElementById('previewContainer');
