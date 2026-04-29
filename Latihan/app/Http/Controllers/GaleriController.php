@@ -42,7 +42,7 @@ class GaleriController extends Controller
             'gambar'       => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'kategori'     => [
                 'required',
-                Rule::in(['Balige', 'Meat', 'Batu Bahisan', 'Liang Sipege', 'Tele', 'Efrata', 'Sihotang']),
+                Rule::in(['Tele', 'Efrata', 'Sihotang']),
             ],
         ], [
             // Custom pesan error bahasa Indonesia
