@@ -701,7 +701,7 @@
         <div class="hero-content">
             <div>
                 <div class="hero-subtitle"> Global Geopark</div>
-                <h1 class="hero-title"> TELE · EFRATA <br>SIHOTANG</h1>
+                <h1 class="hero-title"> TELE · EFRATA · SIHOTANG</h1>
                 <div class="hero-divider"></div>
                 <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
             </div>
@@ -770,7 +770,7 @@
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">01 — GEOSITE</div>
-                        <h3>Meat</h3>
+                        <h3>Tele</h3>
                         <div class="destinasi-location">Pulau Sibandang, Danau Toba</div>
                         <p class="destinasi-desc">Desa adat yang kaya budaya Batak. Makam Opung Raja Hunsa, rumah adat tradisional, tarian Tortor, dan tenun ulos khas Meat.</p>
                         <div class="destinasi-tags">
@@ -790,7 +790,7 @@
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">02 — GEOSITE</div>
-                        <h3>Batu Bahisan</h3>
+                        <h3>Efrata</h3>
                         <div class="destinasi-location">Pulau Sibandang, Danau Toba</div>
                         <p class="destinasi-desc">Formasi batuan unik hasil erosi ribuan tahun. Spot favorit untuk sunrise, sunset, dan fotografi landscape.</p>
                         <div class="destinasi-tags">
@@ -832,7 +832,7 @@
             <div class="section-title" data-aos="fade-up">
                 <h2>Lokasi 3 Geosite</h2>
                 <div class="divider"></div>
-                <p>Meat, Batu Bahisan, dan Liang Sipege - Pulau Sibandang</p>
+                <p>Tele, Efrata - Sihotang</p>
             </div>
             
             <div class="maps-container" data-aos="fade-up">
