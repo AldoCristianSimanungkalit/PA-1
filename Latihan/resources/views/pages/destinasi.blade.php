@@ -311,7 +311,7 @@
             <!-- Tele -->
             <div class="dest-card" data-category="budaya kota" data-aos="fade-up" data-aos-delay="0">
                 <div class="dest-img-wrapper">
-                    <img src="/image/tele.jpeg" class="dest-img" alt="tele">
+                    <img src="/image/tele/tele.jpeg" class="dest-img" alt="tele">
                     <span class="dest-badge budaya">KOTA BUDAYA</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Kabupaten Toba Samosir</p>
@@ -338,7 +338,7 @@
             <!-- Efrata -->
             <div class="dest-card" data-category="budaya sejarah" data-aos="fade-up" data-aos-delay="100">
                 <div class="dest-img-wrapper">
-                    <img src="/image/efrata.jpeg" class="dest-img" alt="efrata">
+                    <img src="/image/efrata/efrata.jpeg" class="dest-img" alt="efrata">
                     <span class="dest-badge budaya">DESA ADAT</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
@@ -365,7 +365,7 @@
             <!-- Sihotang -->
             <div class="dest-card" data-category="geologi fotografi" data-aos="fade-up" data-aos-delay="200">
                 <div class="dest-img-wrapper">
-                    <img src="/image/batu-bahisan.jpg" class="dest-img" alt="sihotang">
+                    <img src="/image/tele/tele.jpeg" class="dest-img" alt="sihotang">
                     <span class="dest-badge geologi">GEOLOGI UNIK</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>

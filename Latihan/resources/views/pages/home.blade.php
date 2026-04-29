@@ -701,7 +701,7 @@
         <div class="hero-content">
             <div>
                 <div class="hero-subtitle"> Global Geopark</div>
-                <h1 class="hero-title"> TELE · EFRATA · SIHOTANG</h1>
+                <h1 class="hero-title">   TELE · EFRATA ·  </h1>
                 <div class="hero-divider"></div>
                 <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
             </div>
@@ -766,7 +766,7 @@
                 <!-- Tele -->
                 <div class="destinasi-item" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/tele/meat-detail.jpg" alt="Tele">
+                        <img src="/image/tele/tele.jpeg" alt="Tele">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">01 — GEOSITE</div>
@@ -786,7 +786,7 @@
                 <!-- Efrata -->
                 <div class="destinasi-item reverse" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/tele/batu-detail.jpg" alt="Efrata">
+                        <img src="/image/efrata/efrata.jpeg" alt="Efrata">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">02 — GEOSITE</div>
@@ -806,7 +806,7 @@
                 <!-- Sihotang -->
                 <div class="destinasi-item" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/tele/liang-detail.jpg" alt="Sihotang">
+                        <img src="/image/tele/tele.jpeg" alt="Sihotang">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">03 — GEOSITE</div>
