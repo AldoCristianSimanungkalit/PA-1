@@ -179,11 +179,11 @@
         transform: scale(1);
     }
     
-    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/meat/slide1.jpg'); }
-    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/meat/slide2.jpg'); }
-    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/meat/slide3.jpg'); }
-    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/meat/slide4.jpg'); }
-    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/meat/slide5.jpg'); }
+    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide1.jpg'); }
+    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide2.jpg'); }
+    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide3.jpg'); }
+    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide4.jpg'); }
+    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide5.jpg'); }
     
     .hero-content {
         position: absolute;
@@ -701,7 +701,7 @@
         <div class="hero-content">
             <div>
                 <div class="hero-subtitle"> Global Geopark</div>
-                <h1 class="hero-title"> BALIGE · MEAT · BATU BAHISAN<br>LIANG SIPEGE</h1>
+                <h1 class="hero-title"> TELE · EFRATA <br>SIHOTANG</h1>
                 <div class="hero-divider"></div>
                 <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
             </div>
@@ -763,10 +763,10 @@
             </div>
             <div class="destinasi-list">
                 
-                <!-- MEAT -->
+                <!-- Tele -->
                 <div class="destinasi-item" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/meat/meat-detail.jpg" alt="Meat">
+                        <img src="/image/tele/meat-detail.jpg" alt="Tele">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">01 — GEOSITE</div>
@@ -779,14 +779,14 @@
                             <span>Tenun Ulos</span>
                             <span>Rumah Adat Batak</span>
                         </div>
-                        <a href="{{ url('/geosite/meat') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                        <a href="{{ url('/geosite/tele') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                     </div>
                 </div>
                 
-                <!-- BATU BAHISAN -->
+                <!-- Efrata -->
                 <div class="destinasi-item reverse" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/meat/batu-detail.jpg" alt="Batu Bahisan">
+                        <img src="/image/tele/batu-detail.jpg" alt="Efrata">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">02 — GEOSITE</div>
@@ -799,18 +799,18 @@
                             <span>Sunrise View</span>
                             <span>Sunset View</span>
                         </div>
-                        <a href="{{ url('/geosite/batu-bahisan') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                        <a href="{{ url('/geosite/efrata') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                     </div>
                 </div>
                 
-                <!-- LIANG SIPEGE -->
+                <!-- Sihotang -->
                 <div class="destinasi-item" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/meat/liang-detail.jpg" alt="Liang Sipege">
+                        <img src="/image/tele/liang-detail.jpg" alt="Sihotang">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">03 — GEOSITE</div>
-                        <h3>Liang Sipege</h3>
+                        <h3>Sihotang</h3>
                         <div class="destinasi-location">Pulau Sibandang, Danau Toba</div>
                         <p class="destinasi-desc">Goa alami dengan stalaktit dan stalakmit menakjubkan. Cocok untuk caving, eksplorasi, dan edukasi geologi.</p>
                         <div class="destinasi-tags">
@@ -819,7 +819,7 @@
                             <span>Stalaktit dan Stalakmit</span>
                             <span>Edukasi Geologi</span>
                         </div>
-                        <a href="{{ url('/geosite/liang-sipege') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                        <a href="{{ url('/geosite/sihotang') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                     </div>
                 </div>
             </div>
@@ -847,15 +847,15 @@
                     <div class="maps-locations">
                         <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Meat+Village+Pulau+Sibandang', '_blank')">
                             <i class="fas fa-location-dot"></i>
-                            <span>Meat Village</span>
+                            <span>Tele</span>
                         </div>
                         <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Bahisan+Pulau+Sibandang', '_blank')">
                             <i class="fas fa-location-dot"></i>
-                            <span>Batu Bahisan</span>
+                            <span>Efrata</span>
                         </div>
                         <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Liang+Sipege+Pulau+Sibandang', '_blank')">
                             <i class="fas fa-location-dot"></i>
-                            <span>Liang Sipege</span>
+                            <span>Sihotang</span>
                         </div>
                     </div>
                     <div class="maps-note">

@@ -308,10 +308,10 @@
     <section class="container">
         <div class="destinasi-grid" id="destinasiGrid">
             
-            <!-- BALIGE -->
+            <!-- Tele -->
             <div class="dest-card" data-category="budaya kota" data-aos="fade-up" data-aos-delay="0">
                 <div class="dest-img-wrapper">
-                    <img src="/image/balige.jpg" class="dest-img" alt="Balige">
+                    <img src="/image/tele.jpeg" class="dest-img" alt="tele">
                     <span class="dest-badge budaya">KOTA BUDAYA</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Kabupaten Toba Samosir</p>
@@ -319,7 +319,7 @@
                     </div>
                 </div>
                 <div class="dest-info">
-                    <h3>Balige</h3>
+                    <h3>Tele</h3>
                     <div class="dest-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Tepi Danau Toba</span>
@@ -335,10 +335,10 @@
                 </div>
             </div>
             
-            <!-- MEAT -->
+            <!-- Efrata -->
             <div class="dest-card" data-category="budaya sejarah" data-aos="fade-up" data-aos-delay="100">
                 <div class="dest-img-wrapper">
-                    <img src="/image/meat.jpg" class="dest-img" alt="Meat">
+                    <img src="/image/efrata.jpeg" class="dest-img" alt="efrata">
                     <span class="dest-badge budaya">DESA ADAT</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
@@ -346,7 +346,7 @@
                     </div>
                 </div>
                 <div class="dest-info">
-                    <h3>Meat</h3>
+                    <h3>Efrata</h3>
                     <div class="dest-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Pulau Sibandang, Danau Toba</span>
@@ -358,14 +358,14 @@
                         <span> Tenun Ulos</span>
                         <span> Rumah Adat</span>
                     </div>
-                    <a href="{{ url('/geosite/meat') }}" class="btn-destinasi">Jelajahi →</a>
+                    <a href="{{ url('/geosite/efrata') }}" class="btn-destinasi">Jelajahi →</a>
                 </div>
             </div>
             
-            <!-- BATU BAHISAN -->
+            <!-- Sihotang -->
             <div class="dest-card" data-category="geologi fotografi" data-aos="fade-up" data-aos-delay="200">
                 <div class="dest-img-wrapper">
-                    <img src="/image/batu-bahisan.jpg" class="dest-img" alt="Batu Bahisan">
+                    <img src="/image/batu-bahisan.jpg" class="dest-img" alt="sihotang">
                     <span class="dest-badge geologi">GEOLOGI UNIK</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
@@ -373,7 +373,7 @@
                     </div>
                 </div>
                 <div class="dest-info">
-                    <h3>Batu Bahisan</h3>
+                    <h3>Sihotang</h3>
                     <div class="dest-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Pulau Sibandang, Danau Toba</span>
@@ -385,37 +385,9 @@
                         <span>🌅 Sunrise</span>
                         <span>🥾 Trekking</span>
                     </div>
-                    <a href="{{ url('/geosite/batu-bahisan') }}" class="btn-destinasi">Jelajahi →</a>
+                    <a href="{{ url('/geosite/sihotang') }}" class="btn-destinasi">Jelajahi →</a>
                 </div>
             </div>
-            
-            <!-- LIANG SIPEGE -->
-            <div class="dest-card" data-category="petualangan geologi" data-aos="fade-up" data-aos-delay="300">
-                <div class="dest-img-wrapper">
-                    <img src="/image/liang-sipege.jpg" class="dest-img" alt="Liang Sipege">
-                    <span class="dest-badge petualangan">PETUALANGAN</span>
-                    <div class="dest-overlay">
-                        <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
-                        <p><i class="fas fa-clock me-1"></i> 08:00 - 17:00 WIB</p>
-                    </div>
-                </div>
-                <div class="dest-info">
-                    <h3>Liang Sipege</h3>
-                    <div class="dest-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Pulau Sibandang, Danau Toba</span>
-                    </div>
-                    <p class="dest-desc">Goa alami dengan stalaktit dan stalakmit yang menakjubkan. Cocok untuk petualangan caving, eksplorasi, dan edukasi geologi.</p>
-                    <div class="dest-tags">
-                        <span>🕳️ Goa Alami</span>
-                        <span>⛰️ Stalaktit</span>
-                        <span>🧗 Caving</span>
-                        <span>📚 Edukasi</span>
-                    </div>
-                    <a href="{{ url('/geosite/liang-sipege') }}" class="btn-destinasi">Jelajahi →</a>
-                </div>
-            </div>
-            
         </div>
     </section>
 

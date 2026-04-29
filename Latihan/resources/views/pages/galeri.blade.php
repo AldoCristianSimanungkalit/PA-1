@@ -314,9 +314,9 @@
 <!-- TABS -->
 <div class="container">
     <div class="galeri-tabs" data-aos="fade-up">
-        <button class="tab-btn active" data-tab="meat">Meat</button>
-        <button class="tab-btn" data-tab="batu-bahisan">Batu Bahisan</button>
-        <button class="tab-btn" data-tab="liang-sipege">Liang Sipege</button>
+        <button class="tab-btn active" data-tab="tele">Tele</button>
+        <button class="tab-btn" data-tab="efrata">Efrata</button>
+        <button class="tab-btn" data-tab="sihotang">Sihotang</button>
     </div>
 </div>
 
@@ -337,19 +337,19 @@
 <script>
     // Data dari database (dari controller)
     const galeriData = {
-        meat: @json($galeriByKategori['meat']->map(function($item) {
+        meat: @json($galeriByKategori['tele']->map(function($item) {
             return [
                 'src' => $item->gambar,
                 'caption' => $item->judul . ' - ' . ($item->deskripsi ?? '')
             ];
         })),
-        'batu-bahisan': @json($galeriByKategori['batu-bahisan']->map(function($item) {
+        'batu-bahisan': @json($galeriByKategori['efrata']->map(function($item) {
             return [
                 'src' => $item->gambar,
                 'caption' => $item->judul . ' - ' . ($item->deskripsi ?? '')
             ];
         })),
-        'liang-sipege': @json($galeriByKategori['liang-sipege']->map(function($item) {
+        'liang-sipege': @json($galeriByKategori['sihotang']->map(function($item) {
             return [
                 'src' => $item->gambar,
                 'caption' => $item->judul . ' - ' . ($item->deskripsi ?? '')
@@ -419,7 +419,7 @@
     });
 
     // Initial render
-    renderGallery('meat');
+    renderGallery('tele');
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

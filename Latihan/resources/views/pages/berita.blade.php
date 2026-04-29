@@ -691,9 +691,9 @@
                     <li><a href="{{ url('/destinasi/alam') }}"><i class="fas fa-chevron-right"></i> Destinasi Alam</a></li>
                     <li><a href="{{ url('/destinasi/buatan') }}"><i class="fas fa-chevron-right"></i> Destinasi Buatan</a></li>
                     <li><a href="{{ url('/destinasi/budaya') }}"><i class="fas fa-chevron-right"></i> Destinasi Budaya</a></li>
-                    <li><a href="{{ url('/geosite/meat') }}"><i class="fas fa-chevron-right"></i> Meat Village</a></li>
-                    <li><a href="{{ url('/geosite/batu-bahisan') }}"><i class="fas fa-chevron-right"></i> Batu Bahisan</a></li>
-                    <li><a href="{{ url('/geosite/liang-sipege') }}"><i class="fas fa-chevron-right"></i> Liang Sipege</a></li>
+                    <li><a href="{{ url('/geosite/tele') }}"><i class="fas fa-chevron-right"></i> Tele</a></li>
+                    <li><a href="{{ url('/geosite/efrata') }}"><i class="fas fa-chevron-right"></i> Efrata</a></li>
+                    <li><a href="{{ url('/geosite/sihotang') }}"><i class="fas fa-chevron-right"></i> Sihotang</a></li>
                 </ul>
             </div>
             
