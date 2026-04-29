@@ -17,6 +17,7 @@ class GaleriController extends Controller
 
     public function store(Request $request)
     {
+        // 1. Validasi Data
         $request->validate([
             'judul'        => 'required|string|max:255',
             'deskripsi'    => 'required|string',
@@ -25,31 +26,34 @@ class GaleriController extends Controller
             'gambar'       => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'kategori'     => [
                 'required',
-                // HANYA TIGA KATEGORI INI YANG DIIZINKAN
+                // Pastikan nilai ini SAMA PERSIS dengan value di Blade
                 Rule::in(['Tele', 'Efrata', 'Sihotang']),
             ],
         ], [
-            'kategori.in' => 'Pilih salah satu kategori: Tele, Efrata, atau Sihotang.',
+            'kategori.in' => 'Pilih salah satu kategori yang tersedia.',
         ]);
 
         try {
             $data = $request->except('gambar');
 
+            // 2. Proses Upload Gambar
             if ($request->hasFile('gambar')) {
                 $file = $request->file('gambar');
+                // Mengubah kategori menjadi huruf kecil untuk nama folder (tele/efrata/sihotang)
                 $folderName = strtolower($request->kategori);
-                // File masuk ke folder: public/galeri/tele atau efrata atau sihotang
+                
                 $path = $file->store("galeri/{$folderName}", 'public');
                 $data['gambar'] = $path;
             }
 
+            // 3. Status dan Simpan ke Database
             $data['status'] = $request->has('status') ? 1 : 0;
             Galeri::create($data);
 
             return redirect()->route('admin.galeri.index')->with('success', 'Galeri berhasil disimpan!');
 
         } catch (\Exception $e) {
-            return back()->withInput()->with('error', 'Gagal: ' . $e->getMessage());
+            return back()->withInput()->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
         }
     }
 }

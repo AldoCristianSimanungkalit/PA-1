@@ -42,16 +42,17 @@
                     @enderror
                 </div>
                 
-                {{-- Kategori (SINKRON DENGAN TELE, EFRATA, SIHOTANG) --}}
+                {{-- Kategori (SINKRON DENGAN VALIDASI CONTROLLER) --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori Wisata --</option>
+                        {{-- Atribut 'value' harus bersih dari emoji agar lolos validasi Rule::in --}}
                         <option value="Tele" {{ old('kategori') == 'Tele' ? 'selected' : '' }}>⛰️ Tele</option>
                         <option value="Efrata" {{ old('kategori') == 'Efrata' ? 'selected' : '' }}>🌊 Efrata</option>
                         <option value="Sihotang" {{ old('kategori') == 'Sihotang' ? 'selected' : '' }}>🏡 Sihotang</option>
                     </select>
-                    <small class="text-muted">Folder: public/storage/galeri/[kategori]</small>
+                    <small class="text-muted">Pilih kategori untuk menentukan folder penyimpanan gambar</small>
                     @error('kategori')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -136,6 +137,8 @@
         const previewImage = document.getElementById('previewImage');
         
         if (file) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewImage = document.getElementById('previewImage');
             const reader = new FileReader();
             reader.onload = function(event) {
                 previewImage.src = event.target.result;
