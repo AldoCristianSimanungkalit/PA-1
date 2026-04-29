@@ -45,10 +45,16 @@
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
+                        {{-- Daftar Kategori Lama --}}
                         <option value="Balige" {{ old('kategori') == 'Balige' ? 'selected' : '' }}>🏙️ Balige</option>
                         <option value="Meat" {{ old('kategori') == 'Meat' ? 'selected' : '' }}>🏝️ Meat</option>
                         <option value="Batu Bahisan" {{ old('kategori') == 'Batu Bahisan' ? 'selected' : '' }}>🪨 Batu Bahisan</option>
                         <option value="Liang Sipege" {{ old('kategori') == 'Liang Sipege' ? 'selected' : '' }}>🕳️ Liang Sipege</option>
+                        
+                        {{-- Kategori Baru Sesuai Request --}}
+                        <option value="Tele" {{ old('kategori') == 'Tele' ? 'selected' : '' }}>⛰️ Tele</option>
+                        <option value="Efrata" {{ old('kategori') == 'Efrata' ? 'selected' : '' }}>🌊 Efrata</option>
+                        <option value="Sihotang" {{ old('kategori') == 'Sihotang' ? 'selected' : '' }}>🏡 Sihotang</option>
                     </select>
                     <small class="text-muted">Pilih kategori untuk menentukan folder penyimpanan gambar</small>
                     @error('kategori')
@@ -99,7 +105,7 @@
                 <div class="col-md-6 mb-3">
                     <div class="form-check mt-4">
                         <input class="form-check-input" type="checkbox" name="status" value="1" 
-                               id="statusCheck" {{ old('status') ? 'checked' : 'checked' }}>
+                               id="statusCheck" {{ old('status', '1') == '1' ? 'checked' : '' }}>
                         <label class="form-check-label" for="statusCheck">
                             <i class="fas fa-check-circle text-success me-1"></i> Aktifkan
                         </label>
