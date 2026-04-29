@@ -53,16 +53,17 @@
                     @enderror
                 </div>
                 
-                {{-- Kategori (Hanya Tele, Efrata, Sihotang) --}}
+                {{-- Kategori (Singkron dengan Controller: Tele, Efrata, Sihotang) --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-select @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
+                        {{-- Value harus SAMA PERSIS dengan Rule::in di Controller --}}
                         <option value="Tele" {{ old('kategori') == 'Tele' ? 'selected' : '' }}>⛰️ Tele</option>
                         <option value="Efrata" {{ old('kategori') == 'Efrata' ? 'selected' : '' }}>🌊 Efrata</option>
                         <option value="Sihotang" {{ old('kategori') == 'Sihotang' ? 'selected' : '' }}>🏡 Sihotang</option>
                     </select>
-                    <small class="text-muted">Folder: public/storage/galeri/[kategori]</small>
+                    <small class="text-muted">Folder tujuan: public/storage/galeri/[nama_kategori]</small>
                     @error('kategori')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -83,7 +84,7 @@
                     <label class="form-label required">Gambar</label>
                     <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror" 
                            accept="image/jpeg,image/png,image/jpg" required id="inputGambar">
-                    <small class="text-muted">Rekomendasi: Aspek rasio 4:3 (Maks. 2MB)</small>
+                    <small class="text-muted">Rekomendasi: Max 2MB (JPG, PNG)</small>
                     
                     {{-- Preview Container --}}
                     <div class="preview-container" id="previewContainer">
@@ -108,4 +109,28 @@
                 {{-- Tanggal --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Tanggal Foto</label>
-                    <input type="date" name="tanggal
+                    <input type="date" name="tanggal_foto" class="form-control @error('tanggal_foto') is-invalid @enderror" 
+                           value="{{ old('tanggal_foto') }}">
+                    @error('tanggal_foto')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Status --}}
+                <div class="col-md-6 mb-3">
+                    <div class="form-check mt-4">
+                        <input class="form-check-input" type="checkbox" name="status" value="1" 
+                               id="statusCheck" {{ old('status', '1') == '1' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="statusCheck">
+                            <i class="fas fa-check-circle text-success me-1"></i> Aktifkan Galeri
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            {{-- Tombol Aksi --}}
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-save">
+                    <i class="fas fa-save me-2
