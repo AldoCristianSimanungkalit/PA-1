@@ -22,11 +22,11 @@
                             @csrf
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="email" name="kelompok9@gmail.com" class="form-control" required>
+                                <input type="email" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label>Password</label>
-                                <input type="password" name="123456" class="form-control" required>
+                                <input type="password" name="pasword" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-dark w-100">Login</button>
                         </form>
