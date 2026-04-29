@@ -50,9 +50,9 @@
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
-                        <option value="Balige" {{ old('kategori', $galeri->kategori) == 'Tele' ? 'selected' : '' }}>🏙️ Tele</option>
-                        <option value="Meat" {{ old('kategori', $galeri->kategori) == 'Efrata' ? 'selected' : '' }}>🏝️ Efrata</option>
-                        <option value="Batu Bahisan" {{ old('kategori', $galeri->kategori) == 'Sihotang' ? 'selected' : '' }}>🪨 Sihotang</option>
+                        <option value="Tele" {{ old('kategori', $galeri->kategori) == 'Tele' ? 'selected' : '' }}>🏙️ Tele</option>
+                        <option value="Efrata" {{ old('kategori', $galeri->kategori) == 'Efrata' ? 'selected' : '' }}>🏝️ Efrata</option>
+                        <option value="Sihotang" {{ old('kategori', $galeri->kategori) == 'Sihotang' ? 'selected' : '' }}>🪨 Sihotang</option>
                     </select>
                     <small class="text-muted">Mengubah kategori akan memindahkan gambar ke folder baru</small>
                     @error('kategori')
