@@ -12,8 +12,8 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin GeoToba',
-            'email' => 'admin@geotoba.com',
-            'password' => Hash::make('password123'),
+            'email' => 'tele@geotoba.com',
+            'password' => Hash::make('pa123'),
         ]);
     }
 }
