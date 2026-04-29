@@ -23,18 +23,18 @@ class DestinasiController extends Controller
                 'nama' => 'Tele',
                 'lokasi' => 'Pulau Sibandang, Danau Toba',
                 'deskripsi' => 'Goa alami dengan stalaktit dan stalakmit yang indah. Tempat eksplorasi dan edukasi geologi.',
-                'gambar' => '/image/liang-sipege/hero.jpg',
+                'gambar' => '/image/Tele/tele.jpeg',
                 'tags' => ['Goa Alami', 'Caving', 'Stalaktit', 'Geologi'],
-                'url' => '/geosite/liang-sipege'
+                'url' => '/geosite/Tele'
             ],
             (object)[
                 'id' => 2,
                 'nama' => 'Efrata',
                 'lokasi' => 'Pulau Sibandang, Danau Toba',
                 'deskripsi' => 'Formasi batuan unik hasil erosi ribuan tahun. Spot favorit untuk sunrise, sunset, dan fotografi landscape.',
-                'gambar' => '/image/batu-bahisan/hero.jpg',
+                'gambar' => '/image/Efrata/efrata.jpeg',
                 'tags' => ['Formasi Batuan', 'Sunrise', 'Sunset', 'Fotografi'],
-                'url' => '/geosite/batu-bahisan'
+                'url' => '/geosite/Efrata'
             ],
             (object)[
                 'id' => 3,

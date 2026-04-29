@@ -16,13 +16,13 @@ class HomeController extends Controller
         (object)[
             'slug' => ' Tele',
             'nama' => 'Tele',
-            'gambar' => '/images/Tele/thumbnail.jpg',
+            'gambar' => '/images/tele.jpeg',
             'deskripsi' => 'Desa adat dengan makam Raja Hunsa dan budaya Batak'
         ],
         (object)[
             'slug' => 'Efrata',
             'nama' => 'Efrata',
-            'gambar' => '/images/Efrata/thumbnail.jpg',
+            'gambar' => '/images/efrata.jpeg',
             'deskripsi' => 'Formasi batuan unik dengan spot foto Instagramable'
         ],
         (object)[

@@ -319,10 +319,10 @@
             <p>Keindahan Liang Sipege</p>
         </div>
         <div class="galeri-grid" id="galeriGrid">
-            <div class="galeri-item"><img src="/image/liang/galeri1.jpg" alt="Galeri 1"></div>
-            <div class="galeri-item"><img src="/image/liang/galeri2.jpg" alt="Galeri 2"></div>
-            <div class="galeri-item"><img src="/image/liang/galeri3.jpg" alt="Galeri 3"></div>
-            <div class="galeri-item"><img src="/image/liang/galeri4.jpg" alt="Galeri 4"></div>
+            <div class="galeri-item"><img src="/image/liang/galeri-1.jpg" alt="Galeri 1"></div>
+            <div class="galeri-item"><img src="/image/liang/galeri-2.jpg" alt="Galeri 2"></div>
+            <div class="galeri-item"><img src="/image/liang/galeri-3.jpg" alt="Galeri 3"></div>
+            <div class="galeri-item"><img src="/image/liang/galeri-4.jpg" alt="Galeri 4"></div>
            
         </div>
     </div>
