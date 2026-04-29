@@ -806,7 +806,7 @@
                 <!-- Sihotang -->
                 <div class="destinasi-item" data-aos="fade-up">
                     <div class="destinasi-image">
-                        <img src="/image/about-toba.jpg" alt="Sihotang">
+                        <img src="/image/galeri.jpg" alt="Sihotang">
                     </div>
                     <div class="destinasi-content">
                         <div class="destinasi-number">03 — GEOSITE</div>
@@ -838,22 +838,22 @@
             <div class="maps-container" data-aos="fade-up">
                 <iframe 
                     id="mapsIframe"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0!2d98.8835095!3d2.4339262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e0415b8f7da39%3A0xc6beb74287f355a5!2sPulau%20Sibandang!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.6!2d98.6330!3d2.5270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031d060f8e3180b%3A0xb561ba45f008aa18!2sTele%20Tower!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 <div class="maps-info">
                     <div class="maps-locations">
-                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Meat+Village+Pulau+Sibandang', '_blank')">
+                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps?q=Tele+Tower+Samosir&output=embed', '_blank')">
                             <i class="fas fa-location-dot"></i>
                             <span>Tele</span>
                         </div>
-                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Bahisan+Pulau+Sibandang', '_blank')">
+                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps?q=Efrata+Waterfall+Samosir&output=embed', '_blank')">
                             <i class="fas fa-location-dot"></i>
                             <span>Efrata</span>
                         </div>
-                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Liang+Sipege+Pulau+Sibandang', '_blank')">
+                        <div class="maps-location-item" onclick="window.open('https://www.google.com/maps?q=Sihotang+Samosir&output=embed', '_blank')">
                             <i class="fas fa-location-dot"></i>
                             <span>Sihotang</span>
                         </div>
