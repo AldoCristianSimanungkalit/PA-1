@@ -11,26 +11,26 @@ class DestinasiSeeder extends Seeder
     {
         Destinasi::insert([
             [
-                'nama' => 'Balige',
-                'slug' => 'balige',
+                'nama' => 'TELE-EFRATA-SIHOTANG',
+                'slug' => 'TELE-EFRATA-SIHOTANG',
                 'gambar' => 'balige.jpg',
-                'deskripsi' => 'Pusat wisata Danau Toba dengan pantai indah'
+                'deskripsi' => 'Pusat wisata Danau Toba dengan panorama yang indah'
             ],
             [
-                'nama' => 'Meat',
-                'slug' => 'meat',
+                'nama' => 'TELE',
+                'slug' => 'TELE',
                 'gambar' => 'meat.jpg',
                 'deskripsi' => 'Desa wisata tradisional di pinggir danau'
             ],
             [
-                'nama' => 'Liang Sipege',
-                'slug' => 'liang-sipege',
+                'nama' => 'EFRATA',
+                'slug' => 'EFRATA',
                 'gambar' => 'liang.jpg',
                 'deskripsi' => 'Goa eksotis dengan pemandangan alam'
             ],
             [
-                'nama' => 'Batu Bahisan',
-                'slug' => 'batu-bahisan',
+                'nama' => 'SIHOTANG',
+                'slug' => 'SIHOTANG',
                 'gambar' => 'batu.jpg',
                 'deskripsi' => 'Wisata alam unik dan instagramable'
             ]

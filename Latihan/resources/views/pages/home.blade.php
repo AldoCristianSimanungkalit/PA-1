@@ -6,7 +6,7 @@
     /* ==================== LOGO SECTION STYLE ==================== */
     .logo-container {
         position: fixed;
-        top: 20px;
+        top: 80px; /* ✅ FIX DI SINI */
         left: 20px;
         z-index: 9999;
         display: flex;
@@ -747,7 +747,7 @@
                     <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di Pulau Sibandang menanti Anda jelajahi.</p>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="/image/about-toba.jpg" alt="Danau Toba">
+                    <img src="/image/ALL.jpg" alt="Danau Toba">
                 </div>
             </div>
         </div>
