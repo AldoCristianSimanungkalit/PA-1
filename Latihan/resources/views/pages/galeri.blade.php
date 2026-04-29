@@ -17,6 +17,10 @@
     --gold:#c6a43b;
 }
 
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
 /* HERO */
 .galeri-hero{
     min-height:400px;
@@ -25,7 +29,7 @@
     justify-content:center;
     align-items:center;
     text-align:center;
-    color:#fff;
+    color:white;
     margin-top:76px;
     padding:80px 20px;
     position:relative;
@@ -35,10 +39,10 @@
     content:'';
     position:absolute;
     inset:0;
-    background:rgba(0,51,102,.6);
+    background:rgba(0,51,102,.55);
 }
 
-.galeri-hero div{
+.galeri-hero .content{
     position:relative;
     z-index:2;
 }
@@ -54,6 +58,7 @@
     text-transform:uppercase;
 }
 
+/* SECTION */
 .section{
     padding:60px 0;
     background:var(--blue-light);
@@ -65,7 +70,7 @@
     padding:0 20px;
 }
 
-/* TABS */
+/* TAB */
 .galeri-tabs{
     display:flex;
     justify-content:center;
@@ -76,19 +81,20 @@
 
 .tab-btn{
     border:none;
-    background:#fff;
-    color:#003366;
+    background:white;
+    color:var(--blue-dark);
     padding:10px 24px;
-    border-radius:40px;
+    border-radius:50px;
     cursor:pointer;
+    font-weight:600;
     transition:.3s;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
 }
 
-.tab-btn.active,
-.tab-btn:hover{
+.tab-btn:hover,
+.tab-btn.active{
     background:var(--gold);
-    color:#fff;
+    color:white;
 }
 
 /* GRID */
@@ -99,11 +105,11 @@
 }
 
 .galeri-item{
-    overflow:hidden;
+    background:white;
     border-radius:14px;
-    background:#fff;
+    overflow:hidden;
     cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -118,12 +124,19 @@
     display:block;
 }
 
+.gallery-counter{
+    margin-top:25px;
+    text-align:center;
+    color:var(--blue-dark);
+    font-weight:600;
+}
+
 /* LIGHTBOX */
 .lightbox{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.92);
+    background:rgba(0,0,0,.9);
     z-index:9999;
     justify-content:center;
     align-items:center;
@@ -143,19 +156,12 @@
     position:absolute;
     top:20px;
     right:30px;
-    color:#fff;
+    color:white;
     font-size:40px;
     cursor:pointer;
 }
 
-.gallery-counter{
-    text-align:center;
-    margin-top:25px;
-    color:#003366;
-    font-weight:600;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
     .galeri-grid{
         grid-template-columns:repeat(2,1fr);
@@ -183,13 +189,13 @@
 
 <!-- HERO -->
 <section class="galeri-hero">
-    <div>
+    <div class="content">
         <h1>Galeri Geosite</h1>
         <p>Dokumentasi Keindahan Geopark Danau Toba</p>
     </div>
 </section>
 
-<!-- TABS -->
+<!-- TAB -->
 <div class="container">
     <div class="galeri-tabs">
         <button class="tab-btn active" data-tab="tele">Tele</button>
@@ -213,30 +219,16 @@
 </div>
 
 <script>
-const galeriData = @json([
-    'tele' => ($galeriByKategori['tele'] ?? collect())->map(function($item){
-        return [
-            'src' => asset('storage/' . $item->gambar),
-            'caption' => $item->judul
-        ];
-    })->values(),
+/* DATA DARI CONTROLLER */
+const galeriData = {
+    tele: @json($galeriByKategori['tele'] ?? []),
+    efrata: @json($galeriByKategori['efrata'] ?? []),
+    sihotang: @json($galeriByKategori['sihotang'] ?? [])
+};
 
-    'efrata' => ($galeriByKategori['efrata'] ?? collect())->map(function($item){
-        return [
-            'src' => asset('storage/' . $item->gambar),
-            'caption' => $item->judul
-        ];
-    })->values(),
-
-    'sihotang' => ($galeriByKategori['sihotang'] ?? collect())->map(function($item){
-        return [
-            'src' => asset('storage/' . $item->gambar),
-            'caption' => $item->judul
-        ];
-    })->values()
-]);
-
+/* RENDER */
 function renderGallery(tab){
+
     const grid = document.getElementById('galeriGrid');
     const counter = document.getElementById('galleryCounter');
 
@@ -252,21 +244,31 @@ function renderGallery(tab){
         return;
     }
 
-    grid.innerHTML = photos.map(photo => `
-        <div class="galeri-item" data-src="${photo.src}">
-            <img src="${photo.src}" alt="${photo.caption}">
-        </div>
-    `).join('');
+    let html = '';
 
-    counter.innerHTML = `📸 Menampilkan ${photos.length} foto`;
+    photos.forEach(function(item){
 
-    document.querySelectorAll('.galeri-item').forEach(item=>{
-        item.onclick = function(){
+        let img = '/storage/' + item.gambar;
+
+        html += `
+            <div class="galeri-item" data-src="${img}">
+                <img src="${img}" alt="">
+            </div>
+        `;
+    });
+
+    grid.innerHTML = html;
+
+    counter.innerHTML = '📸 Menampilkan ' + photos.length + ' foto';
+
+    document.querySelectorAll('.galeri-item').forEach(function(card){
+        card.onclick = function(){
             openLightbox(this.dataset.src);
-        }
+        };
     });
 }
 
+/* LIGHTBOX */
 function openLightbox(src){
     document.getElementById('lightbox').classList.add('active');
     document.getElementById('lightboxImg').src = src;
@@ -290,14 +292,22 @@ document.addEventListener('keydown', function(e){
     }
 });
 
-document.querySelectorAll('.tab-btn').forEach(btn=>{
+/* TAB BUTTON */
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+
     btn.onclick = function(){
-        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+
+        document.querySelectorAll('.tab-btn').forEach(function(b){
+            b.classList.remove('active');
+        });
+
         this.classList.add('active');
+
         renderGallery(this.dataset.tab);
-    }
+    };
 });
 
+/* LOAD PERTAMA */
 renderGallery('tele');
 </script>
 
