@@ -32,9 +32,9 @@ class Galeri extends Model
     public static function getPathByKategori($kategori)
     {
         return match($kategori) {
-            'Meat' => 'image/meat/galeri',
-            'Batu Bahisan' => 'image/batu-bahisan/galeri',
-            'Liang Sipege' => 'image/liang-sipege/galeri',
+            'Tele' => 'image/Tele/galeri',
+            'Efrata' => 'image/Efrata/galeri',
+            'Sihotang' => 'image/Sihotang/galeri',
             default => 'image/galeri',
         };
     }
@@ -43,9 +43,9 @@ class Galeri extends Model
     public static function getPublicPathByKategori($kategori)
     {
         return match($kategori) {
-            'Meat' => '/image/meat/galeri',
-            'Batu Bahisan' => '/image/batu-bahisan/galeri',
-            'Liang Sipege' => '/image/liang-sipege/galeri',
+            'Tele' => '/image/Tele/galeri',
+            'Efrata' => '/image/Efrata/galeri',
+            'Sihotang' => '/image/Sihotang/galeri',
             default => '/image/galeri',
         };
     }
