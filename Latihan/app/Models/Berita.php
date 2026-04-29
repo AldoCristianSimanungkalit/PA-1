@@ -32,7 +32,7 @@ class Berita extends Model
     ];
 
     /**
-     * Boot model
+     * Boot Model
      */
     protected static function boot()
     {
@@ -48,7 +48,7 @@ class Berita extends Model
     }
 
     /**
-     * Relasi ke tabel kategori
+     * Relasi ke kategori
      */
     public function kategori()
     {
@@ -56,14 +56,10 @@ class Berita extends Model
     }
 
     /**
-     * Increment jumlah views
+     * Tambah views
      */
     public function incrementViews()
     {
         $this->increment('views');
     }
-    public function kategori()
-{
-    return $this->belongsTo(Kategori::class);
-}
 }
