@@ -13,7 +13,6 @@
 
 :root{
     --blue-dark:#003366;
-    --blue-medium:#1a4a7a;
     --blue-light:#e8f0f7;
     --gold:#c6a43b;
 }
@@ -76,13 +75,14 @@
 }
 
 .tab-btn{
-    border:1px solid rgba(0,51,102,.2);
+    border:none;
     background:#fff;
-    color:var(--blue-dark);
+    color:#003366;
     padding:10px 24px;
     border-radius:40px;
     cursor:pointer;
     transition:.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .tab-btn.active,
@@ -99,16 +99,16 @@
 }
 
 .galeri-item{
-    background:#fff;
-    border-radius:14px;
     overflow:hidden;
+    border-radius:14px;
+    background:#fff;
     cursor:pointer;
     box-shadow:0 6px 18px rgba(0,0,0,.08);
     transition:.3s;
 }
 
 .galeri-item:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 }
 
 .galeri-item img{
@@ -143,15 +143,16 @@
     position:absolute;
     top:20px;
     right:30px;
-    font-size:40px;
     color:#fff;
+    font-size:40px;
     cursor:pointer;
 }
 
 .gallery-counter{
     text-align:center;
     margin-top:25px;
-    color:var(--blue-dark);
+    color:#003366;
+    font-weight:600;
 }
 
 /* RESPONSIVE */
@@ -212,35 +213,29 @@
 </div>
 
 <script>
-/* ===============================
-   DATA DARI CONTROLLER
-=================================*/
-const galeriData = {
-    tele: @json(($galeriByKategori['tele'] ?? collect())->map(function($item){
+const galeriData = @json([
+    'tele' => ($galeriByKategori['tele'] ?? collect())->map(function($item){
         return [
-            'src' : asset('storage/' . $item->gambar),
-            'caption' : $item->judul . ' - ' . ($item->deskripsi ?? '')
+            'src' => asset('storage/' . $item->gambar),
+            'caption' => $item->judul
         ];
-    })->values()),
+    })->values(),
 
-    efrata: @json(($galeriByKategori['efrata'] ?? collect())->map(function($item){
+    'efrata' => ($galeriByKategori['efrata'] ?? collect())->map(function($item){
         return [
-            'src' : asset('storage/' . $item->gambar),
-            'caption' : $item->judul . ' - ' . ($item->deskripsi ?? '')
+            'src' => asset('storage/' . $item->gambar),
+            'caption' => $item->judul
         ];
-    })->values()),
+    })->values(),
 
-    sihotang: @json(($galeriByKategori['sihotang'] ?? collect())->map(function($item){
+    'sihotang' => ($galeriByKategori['sihotang'] ?? collect())->map(function($item){
         return [
-            'src' : asset('storage/' . $item->gambar),
-            'caption' : $item->judul . ' - ' . ($item->deskripsi ?? '')
+            'src' => asset('storage/' . $item->gambar),
+            'caption' => $item->judul
         ];
-    })->values())
-};
+    })->values()
+]);
 
-/* ===============================
-   RENDER GALLERY
-=================================*/
 function renderGallery(tab){
     const grid = document.getElementById('galeriGrid');
     const counter = document.getElementById('galleryCounter');
@@ -272,18 +267,15 @@ function renderGallery(tab){
     });
 }
 
-/* ===============================
-   LIGHTBOX
-=================================*/
 function openLightbox(src){
     document.getElementById('lightbox').classList.add('active');
     document.getElementById('lightboxImg').src = src;
-    document.body.style.overflow='hidden';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox(){
     document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow='';
+    document.body.style.overflow = '';
 }
 
 document.getElementById('lightbox').onclick = function(e){
@@ -292,15 +284,12 @@ document.getElementById('lightbox').onclick = function(e){
     }
 };
 
-document.addEventListener('keydown',function(e){
+document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
         closeLightbox();
     }
 });
 
-/* ===============================
-   TAB BUTTON
-=================================*/
 document.querySelectorAll('.tab-btn').forEach(btn=>{
     btn.onclick = function(){
         document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -309,9 +298,6 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
     }
 });
 
-/* ===============================
-   INITIAL LOAD
-=================================*/
 renderGallery('tele');
 </script>
 
