@@ -365,7 +365,7 @@
             <!-- Sihotang -->
             <div class="dest-card" data-category="geologi fotografi" data-aos="fade-up" data-aos-delay="200">
                 <div class="dest-img-wrapper">
-                    <img src="/image/tele/tele.jpeg" class="dest-img" alt="sihotang">
+                    <img src="/image/about-toba.jpg" class="dest-img" alt="sihotang">
                     <span class="dest-badge geologi">GEOLOGI UNIK</span>
                     <div class="dest-overlay">
                         <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
