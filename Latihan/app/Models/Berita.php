@@ -62,4 +62,8 @@ class Berita extends Model
     {
         $this->increment('views');
     }
+    public function kategori()
+{
+    return $this->belongsTo(Kategori::class);
+}
 }

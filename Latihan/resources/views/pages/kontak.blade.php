@@ -395,8 +395,8 @@
     
     <div class="geotoba-wrapper">
         <div style="display: flex; flex-direction: column; line-height: 1.2;">
-            <span class="geotoba-text">GEOTOBA</span>
-            <span class="geotoba-sub">Geopark Danau Toba</span>
+            <span class="geotoba-text">Tele - Efrata - Sihotang</span>
+            <span class="geotoba-sub">Geosite Samosir</span>
         </div>
     </div>
 </div>
@@ -420,8 +420,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h4>Alamat</h4>
-                    <p>Geosite Danau Toba</p>
-                    <p>Pulau Sibandang, Danau Toba</p>
+                    <p>Geosite Tele - Efrata - Sihotang</p>
+                    <p>Samosir</p>
                     <p>Sumatera Utara, Indonesia</p>
                 </div>
             </div>
