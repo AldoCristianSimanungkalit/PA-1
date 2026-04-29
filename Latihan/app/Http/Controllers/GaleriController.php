@@ -18,9 +18,9 @@ class GaleriController extends Controller
         
         // Kelompokkan berdasarkan kategori
         $galeriByKategori = [
-            'meat' => $galeri->where('kategori', 'Meat'),
-            'batu-bahisan' => $galeri->where('kategori', 'Batu Bahisan'),
-            'liang-sipege' => $galeri->where('kategori', 'Liang Sipege'),
+            'meat' => $galeri->where('kategori', 'Tele'),
+            'batu-bahisan' => $galeri->where('kategori', 'Efrata'),
+            'liang-sipege' => $galeri->where('kategori', 'Sihotang'),
         ];
         
         return view('pages.galeri', compact('galeriByKategori'));

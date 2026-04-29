@@ -62,9 +62,9 @@ Route::get('/kontak', function () {
 })->name('kontak');
 
 // ==================== GEOSITE ROUTES (TIGA GEOSITE) ====================
-Route::get('/geosite/meat', [GeositeController::class, 'meat'])->name('geosite.meat');
-Route::get('/geosite/batu-bahisan', [GeositeController::class, 'batuBahisan'])->name('geosite.batu-bahisan');
-Route::get('/geosite/liang-sipege', [GeositeController::class, 'liangSipege'])->name('geosite.liang-sipege');
+Route::get('/geosite/Tele', [GeositeController::class, 'Tele'])->name('geosite.Tele');
+Route::get('/geosite/Efrata', [GeositeController::class, 'Efrata'])->name('geosite.Efrata');
+Route::get('/geosite/Sihotang', [GeositeController::class, 'Sihotang'])->name('geosite.Sihotang');
 
 // ==================== AUTH ROUTES ====================
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

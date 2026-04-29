@@ -14,20 +14,20 @@ class HomeController extends Controller
     
     $destinasi = [
         (object)[
-            'slug' => 'meat',
-            'nama' => 'Meat',
+            'slug' => ' Tele',
+            'nama' => 'Tele',
             'gambar' => '/images/meat/thumbnail.jpg',
             'deskripsi' => 'Desa adat dengan makam Raja Hunsa dan budaya Batak'
         ],
         (object)[
-            'slug' => 'batu-bahisan',
-            'nama' => 'Batu Bahisan',
+            'slug' => 'Efrata',
+            'nama' => 'Efrata',
             'gambar' => '/images/batu-bahisan/thumbnail.jpg',
             'deskripsi' => 'Formasi batuan unik dengan spot foto Instagramable'
         ],
         (object)[
-            'slug' => 'liang-sipege',
-            'nama' => 'Liang Sipege',
+            'slug' => 'Sihotang',
+            'nama' => 'Sihotang',
             'gambar' => '/images/liang-sipege/thumbnail.jpg',
             'deskripsi' => 'Goa alami dengan stalaktit dan stalakmit'
         ]

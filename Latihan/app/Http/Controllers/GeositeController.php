@@ -7,18 +7,18 @@ use Illuminate\Http\Request;
 
 class GeositeController extends Controller
 {
-    public function meat()
+    public function Tele()
     {
-        return view('geosite.meat');
+        return view('geosite.Tele');
     }
     
-    public function batuBahisan()
+    public function Efrata()
     {
-        return view('geosite.batu-bahisan');
+        return view('geosite.Efrata');
     }
     
-    public function liangSipege()
+    public function Sihotang()
     {
-        return view('geosite.liang-sipege');
+        return view('geosite.Sihotang');
     }
 }

@@ -20,7 +20,7 @@ class DestinasiController extends Controller
         $destinasi = [
             (object)[
                 'id' => 1,
-                'nama' => 'Liang Sipege',
+                'nama' => 'Tele',
                 'lokasi' => 'Pulau Sibandang, Danau Toba',
                 'deskripsi' => 'Goa alami dengan stalaktit dan stalakmit yang indah. Tempat eksplorasi dan edukasi geologi.',
                 'gambar' => '/image/liang-sipege/hero.jpg',
@@ -29,7 +29,7 @@ class DestinasiController extends Controller
             ],
             (object)[
                 'id' => 2,
-                'nama' => 'Batu Bahisan',
+                'nama' => 'Efrata',
                 'lokasi' => 'Pulau Sibandang, Danau Toba',
                 'deskripsi' => 'Formasi batuan unik hasil erosi ribuan tahun. Spot favorit untuk sunrise, sunset, dan fotografi landscape.',
                 'gambar' => '/image/batu-bahisan/hero.jpg',
@@ -38,7 +38,7 @@ class DestinasiController extends Controller
             ],
             (object)[
                 'id' => 3,
-                'nama' => 'Air Terjun Efrata',
+                'nama' => 'Sihotang',
                 'lokasi' => 'Balige, Danau Toba',
                 'deskripsi' => 'Air terjun cantik dengan air jernih dan suasana asri, cocok untuk refreshing keluarga.',
                 'gambar' => '/image/destinasi/air-terjun.jpg',
