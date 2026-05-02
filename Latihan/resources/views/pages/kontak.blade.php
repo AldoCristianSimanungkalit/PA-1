@@ -532,5 +532,3 @@
         once: true
     });
 </script>
-
-@endsection
