@@ -391,15 +391,16 @@
 </style>
 
 <!-- ==================== LOGO SECTION ==================== -->
-    <div class="logo-divider"></div>
-    
-    <div class="geotoba-wrapper">
-        <div style="display: flex; flex-direction: column; line-height: 1.2;">
-            <span class="geotoba-text">Tele - Efrata - Sihotang</span>
-            <span class="geotoba-sub">Geosite Samosir</span>
+    <div class="logo-container">
+        <div class="logo-divider"></div>
+        
+        <div class="geotoba-wrapper">
+            <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                <span class="geotoba-text">Tele - Efrata - Sihotang</span>
+                <span class="geotoba-sub">Geosite Samosir</span>
+            </div>
         </div>
     </div>
-</div>
 
 <!-- HERO -->
 <section class="kontak-hero">
@@ -517,6 +518,8 @@
         </div>
     </div>
 </section>
+
+@endsection
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
