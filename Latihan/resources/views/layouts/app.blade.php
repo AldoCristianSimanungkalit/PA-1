@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: -200px;  
+    margin-left: 0;
     margin-right: auto;
 }
 
@@ -318,9 +318,10 @@
         padding: 0 15px;
     }
     
-    /* Tambahkan ini - atur margin-left untuk HP */
     .logo-wrapper {
-        margin-left: -100px !important;
+        margin-left: 0 !important;
+        flex-wrap: wrap;
+        gap: 8px;
     }
     
     .logo-img {
@@ -341,10 +342,10 @@
         padding: 0 12px;
     }
     
-    /* Tambahkan ini - atur margin-left untuk HP kecil */
     .logo-wrapper {
-        margin-left: -150px !important;
-        gap: 4px;
+        margin-left: 0 !important;
+        gap: 6px;
+        flex-wrap: wrap;
     }
     
     .logo-img {
