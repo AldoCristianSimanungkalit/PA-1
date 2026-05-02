@@ -76,9 +76,9 @@ Route::get('/kontak', function () {
 
 // ==================== GEOSITE ROUTES ====================
 
-Route::get('/geosite/Tele', [GeositeController::class, 'Tele'])->name('geosite.Tele');
-Route::get('/geosite/Efrata', [GeositeController::class, 'Efrata'])->name('geosite.Efrata');
-Route::get('/geosite/Sihotang', [GeositeController::class, 'Sihotang'])->name('geosite.Sihotang');
+Route::get('/geosite/tele', [GeositeController::class, 'Tele'])->name('geosite.tele');
+Route::get('/geosite/efrata', [GeositeController::class, 'Efrata'])->name('geosite.efrata');
+Route::get('/geosite/sihotang', [GeositeController::class, 'Sihotang'])->name('geosite.sihotang');
 
 // ==================== AUTH ROUTES ====================
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,6 +10,28 @@ use Illuminate\Validation\Rule;
 
 class GaleriController extends Controller
 {
+    public function index()
+    {
+        $galeriByKategori = Galeri::where('status', true)
+            ->orderBy('created_at', 'desc')
+            ->get()
+            ->groupBy(function ($item) {
+                return strtolower($item->kategori);
+            })
+            ->map(function ($items) {
+                return $items->map(function ($item) {
+                    return [
+                        'title' => $item->judul,
+                        'image' => asset($item->gambar),
+                        'description' => $item->deskripsi,
+                        'kategori' => $item->kategori,
+                    ];
+                })->values();
+            })->toArray();
+
+        return view('pages.galeri', compact('galeriByKategori'));
+    }
+
     public function create()
     {
         return view('admin.galeri.create');
