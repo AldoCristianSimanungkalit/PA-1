@@ -406,13 +406,53 @@
     }
     .about-image {
         flex: 1;
-        border-radius: 12px;
+        border-radius: 24px;
         overflow: hidden;
         transition: transform 0.5s ease, box-shadow 0.3s ease;
         box-shadow: 0 10px 30px rgba(0, 51, 102, 0.15);
     }
     .about-image:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0, 51, 102, 0.25); }
     .about-image img { width: 100%; height: auto; display: block; }
+
+    .about-feature-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 32px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0, 51, 102, 0.12);
+        overflow: hidden;
+    }
+    .about-feature-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.35);
+        backdrop-filter: blur(10px);
+        z-index: 1;
+    }
+    .about-feature-card > * {
+        position: relative;
+        z-index: 2;
+    }
+    .about-content {
+        flex: 1;
+        max-width: 570px;
+    }
+    .about-logos {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .about-logos img {
+        max-height: 72px;
+        width: auto;
+        object-fit: contain;
+    }
     
     /* ==================== DESTINASI ==================== */
     .destinasi-list { display: flex; flex-direction: column; gap: 80px; }
@@ -740,11 +780,15 @@
     <!-- ==================== ABOUT ==================== -->
     <section class="section section-light" id="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content" data-aos="fade-right">
+            <div class="about-feature-card" data-aos="fade-up">
+                <div class="about-content">
                     <h3>Warisan Geologi Kelas Dunia</h3>
                     <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
                     <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di Pulau Sibandang menanti Anda jelajahi.</p>
+                    <div class="about-logos">
+                        <img src="/image/Logo/bi.jpeg" alt="Bank Indonesia">
+                        <img src="/image/Logo/del.jpeg" alt="Logo Del">
+                    </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
                     <img src="/image/ALL.jpg" alt="Danau Toba">
