@@ -791,7 +791,7 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="/image/ALL.jpg" alt="Danau Toba">
+                    <img src="/image/warisan.png" alt="Danau Toba">
                 </div>
             </div>
         </div>
