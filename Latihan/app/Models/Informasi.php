@@ -13,6 +13,7 @@ class Informasi extends Model
 
     protected $fillable = [
         'judul',
+        'slug',        // 🔴 TAMBAHKAN INI
         'konten',
         'gambar',
         'status',

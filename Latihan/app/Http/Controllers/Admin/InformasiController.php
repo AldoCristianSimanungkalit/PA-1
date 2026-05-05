@@ -37,7 +37,7 @@ class InformasiController extends Controller
             'status' => $request->has('status') ? 1 : 0
         ];
 
-        // Konversi gambar ke base64 untuk disimpan di database
+        // Konversi gambar ke base64
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar');
             $imageData = file_get_contents($image->getRealPath());
@@ -45,6 +45,14 @@ class InformasiController extends Controller
             $mimeType = $image->getMimeType();
             $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
         }
+
+        // 🔴 Generate slug dari judul
+        $slug = Str::slug($request->judul);
+        $count = Informasi::where('slug', $slug)->count();
+        if ($count > 0) {
+            $slug = $slug . '-' . ($count + 1);
+        }
+        $data['slug'] = $slug;
 
         Informasi::create($data);
 
@@ -83,6 +91,16 @@ class InformasiController extends Controller
             $base64 = base64_encode($imageData);
             $mimeType = $image->getMimeType();
             $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+        }
+
+        // 🔴 Update slug hanya jika judul berubah
+        if ($informasi->judul != $request->judul) {
+            $slug = Str::slug($request->judul);
+            $count = Informasi::where('slug', $slug)->where('id', '!=', $id)->count();
+            if ($count > 0) {
+                $slug = $slug . '-' . ($count + 1);
+            }
+            $data['slug'] = $slug;
         }
 
         $informasi->update($data);
