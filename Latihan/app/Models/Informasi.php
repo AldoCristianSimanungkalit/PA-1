@@ -12,13 +12,14 @@ class Informasi extends Model
     protected $table = 'informasi';
 
     protected $fillable = [
-        'judul',
-        'slug',        // 🔴 TAMBAHKAN INI
-        'konten',
-        'gambar',
-        'status',
-        'urutan'
-    ];
+    'judul',
+    'slug',
+    'konten',
+    'gambar',
+    'status',
+    'urutan',
+    'kategori'   // <--- TAMBAHKAN INI
+];
 
     protected $casts = [
         'status' => 'boolean',

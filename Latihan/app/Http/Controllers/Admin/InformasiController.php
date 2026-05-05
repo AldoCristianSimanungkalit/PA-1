@@ -27,14 +27,16 @@ class InformasiController extends Controller
             'konten' => 'required|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
             'urutan' => 'required|integer|unique:informasi,urutan',
-            'status' => 'nullable|boolean'
+            'status' => 'nullable|boolean',
+            'kategori' => 'nullable|string|max:100'   // <--- TAMBAH VALIDASI KATEGORI
         ]);
 
         $data = [
             'judul' => $request->judul,
             'konten' => $request->konten,
             'urutan' => $request->urutan,
-            'status' => $request->has('status') ? 1 : 0
+            'status' => $request->has('status') ? 1 : 0,
+            'kategori' => $request->kategori ?? 'sejarah'   // <--- NILAI DEFAULT
         ];
 
         // Konversi gambar ke base64
@@ -46,7 +48,7 @@ class InformasiController extends Controller
             $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
         }
 
-        // 🔴 Generate slug dari judul
+        // Generate slug dari judul
         $slug = Str::slug($request->judul);
         $count = Informasi::where('slug', $slug)->count();
         if ($count > 0) {
@@ -75,14 +77,16 @@ class InformasiController extends Controller
             'konten' => 'required|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
             'urutan' => 'required|integer|unique:informasi,urutan,' . $id,
-            'status' => 'nullable|boolean'
+            'status' => 'nullable|boolean',
+            'kategori' => 'nullable|string|max:100'
         ]);
 
         $data = [
             'judul' => $request->judul,
             'konten' => $request->konten,
             'urutan' => $request->urutan,
-            'status' => $request->has('status') ? 1 : 0
+            'status' => $request->has('status') ? 1 : 0,
+            'kategori' => $request->kategori ?? $informasi->kategori   // <--- PERTAHANKAN NILAI LAMA
         ];
 
         if ($request->hasFile('gambar')) {
@@ -93,7 +97,7 @@ class InformasiController extends Controller
             $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
         }
 
-        // 🔴 Update slug hanya jika judul berubah
+        // Update slug hanya jika judul berubah
         if ($informasi->judul != $request->judul) {
             $slug = Str::slug($request->judul);
             $count = Informasi::where('slug', $slug)->where('id', '!=', $id)->count();
