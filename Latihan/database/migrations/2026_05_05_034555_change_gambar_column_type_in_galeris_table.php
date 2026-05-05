@@ -6,23 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::table('galeris', function (Blueprint $table) {
-            $table->longText('gambar')->change();
+            // Hapus dulu jika ada index (opsional)
+            $table->string('gambar', 255)->change();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::table('galeris', function (Blueprint $table) {
-            $table->string('gambar', 255)->change();
+            $table->text('gambar')->change(); // atau blob sesuai aslinya
         });
     }
 };
