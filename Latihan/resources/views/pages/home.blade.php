@@ -972,7 +972,7 @@
 <!-- ==================== LOGO FIXED ==================== -->
 <div class="logo-container">
     <div class="flag-logo-wrapper">
-        <img src="{{ asset('image/Logo/bendera.png') }}" class="flag-img" alt="Bendera">
+        <img src="{{ asset('image/Logo/bi.jpeg') }}" class="flag-img" alt="Bendera">
     </div>
     <div class="logo-divider"></div>
     <div class="del-logo-wrapper">
