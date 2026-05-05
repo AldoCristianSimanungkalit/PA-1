@@ -1,35 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Galeri;
 use Illuminate\Http\Request;
-use App\Models\Galeri; 
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class GaleriController extends Controller
 {
     public function index()
     {
-        $galeriByKategori = Galeri::where('status', true)
-            ->orderBy('created_at', 'desc')
-            ->get()
-            ->groupBy(function ($item) {
-                return strtolower($item->kategori);
-            })
-            ->map(function ($items) {
-                return $items->map(function ($item) {
-                    return [
-                        'title' => $item->judul,
-                        'image' => asset($item->gambar),
-                        'description' => $item->deskripsi,
-                        'kategori' => $item->kategori,
-                    ];
-                })->values();
-            })->toArray();
-
-        return view('pages.galeri', compact('galeriByKategori'));
+        $galeri = Galeri::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.galeri.index', compact('galeri'));
     }
 
     public function create()
@@ -39,43 +23,91 @@ class GaleriController extends Controller
 
     public function store(Request $request)
     {
-        // 1. Validasi Data
         $request->validate([
             'judul'        => 'required|string|max:255',
             'deskripsi'    => 'required|string',
             'lokasi'       => 'nullable|string|max:255',
             'tanggal_foto' => 'nullable|date',
-            'gambar'       => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'kategori'     => [
-                'required',
-                // Pastikan nilai ini SAMA PERSIS dengan value di Blade
-                Rule::in(['Tele', 'Efrata', 'Sihotang']),
-            ],
-        ], [
-            'kategori.in' => 'Pilih salah satu kategori yang tersedia.',
+            'gambar'       => 'required|image|mimes:jpeg,png,jpg|max:5120', // 5MB
+            'kategori'     => ['required', Rule::in(['Tele', 'Efrata', 'Sihotang'])],
         ]);
 
-        try {
-            $data = $request->except('gambar');
+        $data = $request->except('gambar');
+        $data['status'] = $request->has('status') ? 1 : 0;
 
-            // 2. Proses Upload Gambar
-            if ($request->hasFile('gambar')) {
-                $file = $request->file('gambar');
-                // Mengubah kategori menjadi huruf kecil untuk nama folder (tele/efrata/sihotang)
-                $folderName = strtolower($request->kategori);
-                
-                $path = $file->store("galeri/{$folderName}", 'public');
-                $data['gambar'] = $path;
-            }
-
-            // 3. Status dan Simpan ke Database
-            $data['status'] = $request->has('status') ? 1 : 0;
-            Galeri::create($data);
-
-            return redirect()->route('admin.galeri.index')->with('success', 'Galeri berhasil disimpan!');
-
-        } catch (\Exception $e) {
-            return back()->withInput()->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+        // Simpan gambar ke storage/public
+        if ($request->hasFile('gambar')) {
+            $folder = strtolower($request->kategori); // tele, efrata, sihotang
+            $file = $request->file('gambar');
+            $filename = time() . '_' . Str::slug($request->judul) . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs("galeri/{$folder}", $filename, 'public');
+            $data['gambar'] = '/storage/' . $path;
         }
+
+        Galeri::create($data);
+
+        return redirect()->route('admin.galeri.index')
+            ->with('success', 'Galeri berhasil ditambahkan!');
+    }
+
+    public function edit($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        return view('admin.galeri.edit', compact('galeri'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $galeri = Galeri::findOrFail($id);
+
+        $request->validate([
+            'judul'        => 'required|string|max:255',
+            'deskripsi'    => 'required|string',
+            'lokasi'       => 'nullable|string|max:255',
+            'tanggal_foto' => 'nullable|date',
+            'gambar'       => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
+            'kategori'     => ['required', Rule::in(['Tele', 'Efrata', 'Sihotang'])],
+        ]);
+
+        $data = $request->except('gambar');
+        $data['status'] = $request->has('status') ? 1 : 0;
+
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika ada
+            if ($galeri->gambar && file_exists(public_path($galeri->gambar))) {
+                unlink(public_path($galeri->gambar));
+            }
+            $folder = strtolower($request->kategori);
+            $file = $request->file('gambar');
+            $filename = time() . '_' . Str::slug($request->judul) . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs("galeri/{$folder}", $filename, 'public');
+            $data['gambar'] = '/storage/' . $path;
+        }
+
+        $galeri->update($data);
+
+        return redirect()->route('admin.galeri.index')
+            ->with('success', 'Galeri berhasil diupdate!');
+    }
+
+    public function destroy($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        if ($galeri->gambar && file_exists(public_path($galeri->gambar))) {
+            unlink(public_path($galeri->gambar));
+        }
+        $galeri->delete();
+
+        return redirect()->route('admin.galeri.index')
+            ->with('success', 'Galeri berhasil dihapus!');
+    }
+
+    public function toggleStatus($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        $galeri->status = !$galeri->status;
+        $galeri->save();
+
+        return response()->json(['success' => true, 'status' => $galeri->status]);
     }
 }
