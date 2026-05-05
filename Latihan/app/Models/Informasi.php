@@ -9,7 +9,7 @@ class Informasi extends Model
 {
     use HasFactory;
 
-    protected $table = 'informasis'; // pastikan sesuai nama tabel di DB
+    protected $table = 'informasi';
 
     protected $fillable = [
         'judul',
