@@ -9,59 +9,45 @@ use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
 use App\Http\Controllers\GeositeController;
+use App\Http\Controllers\InformasiController as PublicInformasiController;
+use Illuminate\Support\Facades\DB;
 
 // ==================== FRONTEND ROUTES ====================
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Destinasi
+// Destinasi Routes
 Route::get('/destinasi', [DestinasiController::class, 'index'])->name('destinasi');
 Route::get('/destinasi/alam', [DestinasiController::class, 'alam'])->name('destinasi.alam');
 Route::get('/destinasi/buatan', [DestinasiController::class, 'buatan'])->name('destinasi.buatan');
 Route::get('/destinasi/budaya', [DestinasiController::class, 'budaya'])->name('destinasi.budaya');
 
-// Informasi
-Route::get('/informasi', function () {
-    $informasi = App\Models\Informasi::where('status', true)
-        ->latest()
-        ->paginate(10);
-
-    return view('pages.informasi', compact('informasi'));
-})->name('informasi');
+// Informasi (Halaman Sejarah Caldera Toba) - pakai controller
+Route::get('/informasi', [PublicInformasiController::class, 'index'])->name('informasi');
 
 // Galeri Publik
 Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri');
 
+// Detail Galeri
+Route::get('/galeri/{slug}', function ($slug) {
+    $galeri = App\Models\Galeri::where('slug', $slug)->firstOrFail();
+    $galeri->increment('views');
+    return view('pages.galeri-detail', compact('galeri'));
+})->name('galeri.detail');
+
 // Berita Publik
 Route::get('/berita', function () {
-    $berita = App\Models\Berita::where('status', true)
-        ->latest()
-        ->paginate(9);
-
+    $berita = App\Models\Berita::where('status', true)->latest()->paginate(9);
     return view('pages.berita', compact('berita'));
 })->name('berita');
 
 // Detail Berita
 Route::get('/berita/{slug}', function ($slug) {
-    $berita = App\Models\Berita::where('slug', $slug)
-        ->where('status', true)
-        ->firstOrFail();
-
+    $berita = App\Models\Berita::where('slug', $slug)->where('status', true)->firstOrFail();
     $berita->increment('views');
-
     return view('pages.berita-detail', compact('berita'));
 })->name('berita.detail');
-
-// Detail Galeri
-Route::get('/galeri/{slug}', function ($slug) {
-    $galeri = App\Models\Galeri::where('slug', $slug)->firstOrFail();
-
-    // Jika tabel galeris punya kolom views, aktifkan:
-    // $galeri->increment('views');
-
-    return view('pages.galeri-detail', compact('galeri'));
-})->name('galeri.detail');
 
 // UMKM
 Route::get('/umkm', [HomeController::class, 'umkm'])->name('umkm');
@@ -74,50 +60,41 @@ Route::get('/kontak', function () {
     return view('pages.kontak');
 })->name('kontak');
 
-// ==================== GEOSITE ROUTES ====================
-
-Route::get('/geosite/tele', [GeositeController::class, 'Tele'])->name('geosite.tele');
-Route::get('/geosite/efrata', [GeositeController::class, 'Efrata'])->name('geosite.efrata');
-Route::get('/geosite/sihotang', [GeositeController::class, 'Sihotang'])->name('geosite.sihotang');
+// ==================== GEOSITE ROUTES (Tele, Efrata, Sihotang) ====================
+Route::get('/geosite/tele', [GeositeController::class, 'tele'])->name('geosite.tele');
+Route::get('/geosite/efrata', [GeositeController::class, 'efrata'])->name('geosite.efrata');
+Route::get('/geosite/sihotang', [GeositeController::class, 'sihotang'])->name('geosite.sihotang');
 
 // ==================== AUTH ROUTES ====================
-
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Lupa Password Routes (dari kode pertama, dipertahankan)
+Route::get('/forgot-password', [AuthController::class, 'showForgotForm'])->name('password.request');
+Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
+Route::get('/reset-password/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
+
 // ==================== ADMIN ROUTES ====================
-
-Route::prefix('admin')->middleware('auth')->group(function () {
-
-    // Dashboard Admin
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    
     Route::get('/', function () {
-
-        $totalGaleri = App\Models\Galeri::count();
-        $totalBerita = App\Models\Berita::count();
-        $totalInformasi = App\Models\Informasi::count();
-
-        // FIX ERROR: hanya berita memiliki kolom views
+        $totalGaleri = DB::table('galeris')->count();
+        $totalBerita = DB::table('berita')->count();
+        $totalInformasi = DB::table('informasi')->count();
+        // Hitung views hanya dari berita (karena galeri mungkin tidak punya kolom views)
         $totalViews = App\Models\Berita::sum('views');
-
-        return view('admin.dashboard', compact(
-            'totalGaleri',
-            'totalBerita',
-            'totalInformasi',
-            'totalViews'
-        ));
-
+        
+        return view('admin.dashboard', compact('totalGaleri', 'totalBerita', 'totalInformasi', 'totalViews'));
     })->name('admin.dashboard');
-
-    // Resource CRUD
+    
+    // Resource CRUD (tanpa duplikasi)
     Route::resource('galeri', GaleriController::class)->names('admin.galeri');
     Route::resource('berita', BeritaController::class)->names('admin.berita');
     Route::resource('informasi', InformasiController::class)->names('admin.informasi');
-
+    
     // Toggle Status Galeri
-    Route::post(
-        'galeri/toggle-status/{id}',
-        [GaleriController::class, 'toggleStatus']
-    )->name('admin.galeri.toggle-status');
-
+    Route::post('galeri/toggle-status/{id}', [GaleriController::class, 'toggleStatus'])->name('admin.galeri.toggle-status');
+    
 });

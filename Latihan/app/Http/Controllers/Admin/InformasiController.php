@@ -1,5 +1,4 @@
 <?php
-// app/Http/Controllers/Admin/InformasiController.php
 
 namespace App\Http\Controllers\Admin;
 
@@ -12,7 +11,7 @@ class InformasiController extends Controller
 {
     public function index()
     {
-        $informasi = Informasi::latest()->paginate(10);
+        $informasi = Informasi::orderBy('urutan', 'asc')->paginate(10);
         return view('admin.informasi.index', compact('informasi'));
     }
 
@@ -24,32 +23,33 @@ class InformasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judul'    => 'required',
-            'konten'   => 'required',
-            'kategori' => 'required',
-            'gambar'   => 'nullable|image|max:2048', // validasi file
+            'judul' => 'required|string|max:255',
+            'konten' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
+            'urutan' => 'required|integer|unique:informasi,urutan',
+            'status' => 'nullable|boolean'
         ]);
 
         $data = [
-            'judul'    => $request->judul,
-            'slug'     => Str::slug($request->judul),
-            'konten'   => $request->konten,
-            'kategori' => $request->kategori,
-            'penulis'  => $request->penulis ?? 'Admin',
-            'status'   => $request->has('status'),
-            'gambar'   => null, // kolom path tidak digunakan lagi
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+            'urutan' => $request->urutan,
+            'status' => $request->has('status') ? 1 : 0
         ];
 
+        // Konversi gambar ke base64 untuk disimpan di database
         if ($request->hasFile('gambar')) {
-            $file = $request->file('gambar');
-            $data['gambar_tipe'] = $file->getMimeType();
-            $data['gambar_data'] = file_get_contents($file->getRealPath());
+            $image = $request->file('gambar');
+            $imageData = file_get_contents($image->getRealPath());
+            $base64 = base64_encode($imageData);
+            $mimeType = $image->getMimeType();
+            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
         }
 
         Informasi::create($data);
 
         return redirect()->route('admin.informasi.index')
-                         ->with('success', 'Informasi berhasil ditambahkan!');
+            ->with('success', 'Data berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -63,35 +63,32 @@ class InformasiController extends Controller
         $informasi = Informasi::findOrFail($id);
 
         $request->validate([
-            'judul'    => 'required',
-            'konten'   => 'required',
-            'kategori' => 'required',
-            'gambar'   => 'nullable|image|max:2048',
+            'judul' => 'required|string|max:255',
+            'konten' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
+            'urutan' => 'required|integer|unique:informasi,urutan,' . $id,
+            'status' => 'nullable|boolean'
         ]);
 
         $data = [
-            'judul'    => $request->judul,
-            'slug'     => Str::slug($request->judul),
-            'konten'   => $request->konten,
-            'kategori' => $request->kategori,
-            'penulis'  => $request->penulis ?? 'Admin',
-            'status'   => $request->has('status'),
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+            'urutan' => $request->urutan,
+            'status' => $request->has('status') ? 1 : 0
         ];
 
         if ($request->hasFile('gambar')) {
-            $file = $request->file('gambar');
-            $data['gambar_tipe'] = $file->getMimeType();
-            $data['gambar_data'] = file_get_contents($file->getRealPath());
-        } else {
-            // Jika tidak upload gambar baru, pertahankan data lama
-            unset($data['gambar_tipe']);
-            unset($data['gambar_data']);
+            $image = $request->file('gambar');
+            $imageData = file_get_contents($image->getRealPath());
+            $base64 = base64_encode($imageData);
+            $mimeType = $image->getMimeType();
+            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
         }
 
         $informasi->update($data);
 
         return redirect()->route('admin.informasi.index')
-                         ->with('success', 'Informasi berhasil diupdate!');
+            ->with('success', 'Data berhasil diupdate!');
     }
 
     public function destroy($id)
@@ -100,6 +97,15 @@ class InformasiController extends Controller
         $informasi->delete();
 
         return redirect()->route('admin.informasi.index')
-                         ->with('success', 'Informasi berhasil dihapus!');
+            ->with('success', 'Data berhasil dihapus!');
+    }
+
+    public function toggleStatus($id)
+    {
+        $informasi = Informasi::findOrFail($id);
+        $informasi->status = !$informasi->status;
+        $informasi->save();
+
+        return response()->json(['success' => true, 'status' => $informasi->status]);
     }
 }

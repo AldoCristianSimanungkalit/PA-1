@@ -5,10 +5,10 @@
 @section('content')
 
 <style>
-    /* ========== LOGO ========== */
+    /* ========== LOGO FIXED (seperti di home) ========== */
     .logo-container {
         position: fixed;
-        top: 20px;
+        top: 80px;
         left: 20px;
         z-index: 9999;
         display: flex;
@@ -24,34 +24,26 @@
     }
     .logo-container:hover {
         background: #0a4a7a;
-        box-shadow: 0 12px 30px rgba(0, 51, 102, 0.4);
         transform: translateY(-2px);
     }
     .flag-img { width: 100px; height: auto; border-radius: 6px; }
     .logo-divider { width: 2px; height: 35px; background: rgba(255,255,255,0.3); }
     .del-img { width: 50px; height: auto; border-radius: 8px; }
-    .geotoba-text { 
-        font-size: 1.5rem; 
-        font-weight: 800; 
-        letter-spacing: 1px; 
+    .geotoba-text {
+        font-size: 1.5rem;
+        font-weight: 800;
         color: white;
         font-family: 'Inter', 'Poppins', sans-serif;
     }
-    .geotoba-sub { 
-        font-size: 0.7rem; 
-        font-weight: 500; 
+    .geotoba-sub {
+        font-size: 0.7rem;
         color: rgba(255,255,255,0.8);
-        letter-spacing: 0.5px;
     }
-    @media (max-width: 768px) { 
-        .flag-img { width: 60px; } 
-        .del-img { width: 35px; } 
-        .geotoba-text { font-size: 1.2rem; } 
-    }
-    @media (max-width: 576px) { 
-        .flag-img { width: 45px; } 
-        .del-img { width: 28px; } 
-        .geotoba-text { font-size: 0.9rem; } 
+    @media (max-width: 768px) {
+        .logo-container { top: 12px; left: 12px; padding: 6px 18px; }
+        .flag-img { width: 60px; }
+        .del-img { width: 35px; }
+        .geotoba-text { font-size: 1.2rem; }
     }
 
     /* ========== HERO ========== */
@@ -67,48 +59,49 @@
         color: white;
         margin-top: 76px;
     }
-    .sejarah-hero h1 { 
-        font-size: 3.5rem; 
-        font-family: 'Cormorant Garamond', serif; 
+    .sejarah-hero h1 {
+        font-size: 3.5rem;
+        font-family: 'Cormorant Garamond', serif;
         margin-bottom: 12px;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
     }
-    .sejarah-hero p { 
-        font-size: 0.9rem; 
-        letter-spacing: 0.2em; 
-        text-transform: uppercase; 
+    .sejarah-hero p {
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
         opacity: 0.85;
     }
 
-    /* ========== SECTION ========== */
+    /* ========== SECTION UMUM ========== */
     .section { padding: 60px 0; }
     .bg-light { background: linear-gradient(135deg, #e0ecf7 0%, #d4e4f2 100%); }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .section-title { text-align: center; margin-bottom: 45px; }
-    .section-title h2 { 
-        font-size: 2rem; 
-        font-family: 'Cormorant Garamond', serif; 
-        color: #003366; 
+    .section-title h2 {
+        font-size: 2rem;
+        font-family: 'Cormorant Garamond', serif;
+        color: #003366;
     }
     .divider { width: 50px; height: 2px; background: #c6a43b; margin: 10px auto 0; }
     .section-title p { color: #2c5f8a; margin-top: 15px; }
 
-    /* ========== SEJARAH BERSILANG ========== */
+    /* ========== SEJARAH BERSILANG (dinamis) ========== */
     .sejarah-grid { display: flex; flex-direction: column; gap: 45px; }
     .sejarah-item { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
     .sejarah-item.reverse { flex-direction: row-reverse; }
     .sejarah-text { flex: 1; line-height: 1.8; color: #2c5f8a; font-size: 0.95rem; }
     .sejarah-text p { margin-bottom: 15px; }
-    .sejarah-image { 
-        flex: 1; 
-        border-radius: 16px; 
-        overflow: hidden; 
-        box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15); 
+    .sejarah-image {
+        flex: 1;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+        transition: all 0.3s ease;
     }
-    .sejarah-image img { width: 100%; height: 260px; object-fit: cover; transition: 0.3s; }
+    .sejarah-image img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.4s; }
     .sejarah-image:hover img { transform: scale(1.02); }
 
-    /* ========== TIMELINE ========== */
+    /* ========== TIMELINE (dengan deskripsi) ========== */
     .timeline {
         display: flex;
         justify-content: space-between;
@@ -123,33 +116,37 @@
         padding: 20px;
         text-align: center;
         border: 1px solid rgba(0, 51, 102, 0.1);
-        transition: 0.3s;
+        transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
         box-shadow: 0 5px 15px rgba(0, 51, 102, 0.05);
     }
-    .timeline-item:hover { 
-        transform: translateY(-5px); 
+    .timeline-item:hover {
+        transform: translateY(-5px);
         box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
         border-color: #c6a43b;
     }
-    .timeline-year { 
-        font-size: 1.3rem; 
-        font-weight: 700; 
-        color: #c6a43b; 
-        margin-bottom: 8px; 
+    .timeline-year {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #c6a43b;
+        margin-bottom: 8px;
     }
-    .timeline-title { 
-        font-weight: 600; 
-        margin-bottom: 8px; 
-        color: #003366; 
+    .timeline-title {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #003366;
     }
-    .timeline-desc { font-size: 0.75rem; color: #2c5f8a; }
+    .timeline-desc {
+        font-size: 0.75rem;
+        color: #2c5f8a;
+        line-height: 1.5;
+    }
 
-    /* ========== FAKTA ========== */
-    .fakta-grid { 
-        display: grid; 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 25px; 
-        margin-top: 30px; 
+    /* ========== FAKTA (dengan deskripsi) ========== */
+    .fakta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 30px;
     }
     .fakta-card {
         background: white;
@@ -157,28 +154,31 @@
         padding: 25px;
         text-align: center;
         border: 1px solid rgba(0, 51, 102, 0.1);
-        transition: 0.3s;
+        transition: all 0.3s ease;
         box-shadow: 0 5px 15px rgba(0, 51, 102, 0.05);
     }
-    .fakta-card:hover { 
-        transform: translateY(-5px); 
+    .fakta-card:hover {
+        transform: translateY(-5px);
         box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
-        background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+        background: linear-gradient(135deg, #fff, #f0f7ff);
     }
-    .fakta-number { 
-        font-size: 2rem; 
-        font-weight: 700; 
-        color: #c6a43b; 
-        margin-bottom: 8px; 
+    .fakta-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #c6a43b;
+        margin-bottom: 8px;
     }
-    .fakta-title { 
-        font-weight: 600; 
-        margin-bottom: 8px; 
-        color: #003366; 
+    .fakta-title {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #003366;
     }
-    .fakta-desc { font-size: 0.8rem; color: #2c5f8a; }
+    .fakta-desc {
+        font-size: 0.8rem;
+        color: #2c5f8a;
+    }
 
-    /* ========== CTA BIRU ========== */
+    /* ========== CTA DENGAN ANIMASI ========== */
     .cta-section {
         background: linear-gradient(135deg, #003366 0%, #0a4a7a 50%, #005c8a 100%);
         padding: 60px 0;
@@ -220,10 +220,9 @@
         margin: 0 auto 25px;
     }
     .cta-content p {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255,255,255,0.8);
         margin-bottom: 35px;
         font-size: 0.9rem;
-        line-height: 1.7;
     }
     .cta-btn {
         display: inline-block;
@@ -244,6 +243,7 @@
         letter-spacing: 0.25em;
     }
 
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
         .sejarah-hero h1 { font-size: 2.2rem; }
         .section { padding: 40px 0; }
@@ -259,7 +259,23 @@
     }
 </style>
 
-<!-- LOGO -->
+<!-- LOGO FIXED (sama seperti home) -->
+<div class="logo-container">
+    <div class="flag-logo-wrapper">
+        <img src="{{ asset('image/Logo/bendera.png') }}" class="flag-img" alt="Bendera">
+    </div>
+    <div class="logo-divider"></div>
+    <div class="del-logo-wrapper">
+        <img src="{{ asset('image/Logo/del.jpeg') }}" class="del-img" alt="Del">
+    </div>
+    <div class="logo-divider"></div>
+    <div class="geotoba-wrapper">
+        <div>
+            <div class="geotoba-text">GEOTOBA</div>
+            <div class="geotoba-sub">Geopark Danau Toba</div>
+        </div>
+    </div>
+</div>
 
 <!-- HERO -->
 <section class="sejarah-hero">
@@ -269,7 +285,7 @@
     </div>
 </section>
 
-<!-- SEJARAH BERSILANG -->
+<!-- SEJARAH BERSILANG (dinamis dari database) -->
 <section class="section">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -277,29 +293,29 @@
             <div class="divider"></div>
         </div>
         <div class="sejarah-grid">
-            <div class="sejarah-item" data-aos="fade-right">
-                <div class="sejarah-image"><img src="/image/sejarah1.jpg" alt="Letusan Supervolcano"></div>
+            @forelse($sejarahList as $index => $item)
+            <div class="sejarah-item {{ $index % 2 == 1 ? 'reverse' : '' }}" data-aos="fade-{{ $index % 2 == 0 ? 'right' : 'left' }}">
+                <div class="sejarah-image">
+                    @if($item->gambar)
+                        <img src="{{ $item->gambar }}" alt="{{ $item->judul }}">
+                    @else
+                        <img src="/image/sejarah{{ $index+1 }}.jpg" alt="{{ $item->judul }}">
+                    @endif
+                </div>
                 <div class="sejarah-text">
-                    <p>Danau Toba terbentuk akibat letusan gunung berapi super (supervolcano) yang terjadi sekitar 74.000 tahun lalu. Letusan ini merupakan salah satu letusan terbesar dalam sejarah bumi yang meninggalkan kaldera raksasa yang kini dikenal sebagai Danau Toba. Material vulkanik dari letusan ini tersebar hingga ke berbagai belahan dunia, termasuk India dan Afrika.</p>
+                    {!! $item->konten !!}
                 </div>
             </div>
-            <div class="sejarah-item reverse" data-aos="fade-left">
-                <div class="sejarah-image"><img src="/image/sejarah2.jpg" alt="Kaldera Toba"></div>
-                <div class="sejarah-text">
-                    <p>Letusan supervolcano Toba menghasilkan kaldera dengan panjang 100 km dan lebar 30 km. Setelah letusan, kaldera perlahan terisi air dan membentuk Danau Toba yang kita kenal sekarang. Proses pengangkatan kembali dasar kaldera kemudian menciptakan Pulau Samosir di tengah danau, yang menjadikan Danau Toba unik di dunia.</p>
-                </div>
+            @empty
+            <div class="text-center py-5">
+                <p>Belum ada data sejarah. Silakan tambahkan melalui admin.</p>
             </div>
-            <div class="sejarah-item" data-aos="fade-right">
-                <div class="sejarah-image"><img src="/image/sejarah3.jpg" alt="Geopark Toba"></div>
-                <div class="sejarah-text">
-                    <p>Kawasan Danau Toba kini diakui UNESCO sebagai Global Geopark pada tahun 2020. Pengakuan ini diberikan karena nilai geologi yang luar biasa, keanekaragaman hayati, serta warisan budaya Batak yang masih terjaga hingga saat ini.</p>
-                </div>
-            </div>
+            @endforelse
         </div>
     </div>
 </section>
 
-<!-- TIMELINE 4 LETUSAN -->
+<!-- TIMELINE 4 LETUSAN (statis dengan deskripsi lengkap) -->
 <section class="section bg-light">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -325,14 +341,14 @@
             </div>
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
                 <div class="timeline-year">74.000 Tahun</div>
-                <div class="timeline-title">Letusan Keempat</div>
-                <div class="timeline-desc">Letusan supervolcano yang membentuk Kaldera Toba (YTT)</div>
+                <div class="timeline-title">Letusan Keempat (Supervolcano)</div>
+                <div class="timeline-desc">Letusan terbesar yang membentuk Kaldera Toba (YTT) dan Danau Toba modern</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FAKTA UNIK -->
+<!-- FAKTA UNIK (dengan deskripsi) -->
 <section class="section">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -343,23 +359,23 @@
             <div class="fakta-card" data-aos="fade-up">
                 <div class="fakta-number">#1</div>
                 <div class="fakta-title">Danau Vulkanik Terbesar</div>
-                <div class="fakta-desc">Danau Toba adalah danau vulkanik terbesar di dunia</div>
+                <div class="fakta-desc">Danau Toba adalah danau vulkanik terbesar di dunia dengan panjang 100 km dan lebar 30 km</div>
             </div>
             <div class="fakta-card" data-aos="fade-up" data-aos-delay="50">
                 <div class="fakta-number">#2</div>
                 <div class="fakta-title">Pulau di Tengah Danau</div>
-                <div class="fakta-desc">Pulau Samosir adalah pulau di tengah danau terbesar di dunia</div>
+                <div class="fakta-desc">Pulau Samosir adalah pulau di tengah danau terbesar di dunia, terbentuk dari pengangkatan dasar kaldera</div>
             </div>
             <div class="fakta-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="fakta-number">#3</div>
                 <div class="fakta-title">UNESCO Global Geopark</div>
-                <div class="fakta-desc">Diakui UNESCO sejak tahun 2020</div>
+                <div class="fakta-desc">Diakui UNESCO sebagai Global Geopark pada tahun 2020 karena nilai geologi, biologi, dan budayanya</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA SECTION -->
+<!-- CTA SECTION (dengan animasi rotate) -->
 <section class="cta-section">
     <div class="container">
         <div class="cta-content" data-aos="fade-up">
@@ -372,6 +388,8 @@
 </section>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 700, once: true, offset: 50 });</script>
+<script>
+    AOS.init({ duration: 700, once: true, offset: 50 });
+</script>
 
 @endsection
