@@ -792,7 +792,6 @@
                 </div>
                 <div class="about-image" data-aos="fade-left">
                     <img src="/image/warisan.png" alt="Danau Toba">
-                    <img src="/image/ALL.jpeg" alt="Danau Toba">
                 </div>
             </div>
         </div>
