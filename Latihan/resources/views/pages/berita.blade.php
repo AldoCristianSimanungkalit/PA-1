@@ -650,75 +650,7 @@
 </div>
 
 <!-- FOOTER BIRU -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-logo">
-            <div class="logo-icon">
-                <i class="fas fa-mountain"></i>
-            </div>
-            <h3>Geo<span>Toba</span></h3>
-            <p>GEOPARK DANAU TOBA • WARISAN DUNIA UNESCO</p>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="footer-title">Tentang GeoToba</h5>
-                <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.7; margin-top: 15px;">
-                    Sistem Informasi Geosite Danau Toba - Menyajikan informasi lengkap tentang keindahan geologi, budaya Batak, dan pesona alam Caldera Danau Toba.
-                </p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 class="footer-title">Tautan</h5>
-                <ul class="footer-links">
-                    <li><a href="{{ url('/') }}"><i class="fas fa-chevron-right"></i> Beranda</a></li>
-                    <li><a href="{{ url('/destinasi') }}"><i class="fas fa-chevron-right"></i> Destinasi</a></li>
-                    <li><a href="{{ url('/galeri') }}"><i class="fas fa-chevron-right"></i> Galeri</a></li>
-                    <li><a href="{{ url('/berita') }}"><i class="fas fa-chevron-right"></i> Berita</a></li>
-                    <li><a href="{{ url('/kontak') }}"><i class="fas fa-chevron-right"></i> Kontak</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="footer-title">Destinasi</h5>
-                <ul class="footer-links">
-                    <li><a href="{{ url('/destinasi/alam') }}"><i class="fas fa-chevron-right"></i> Destinasi Alam</a></li>
-                    <li><a href="{{ url('/destinasi/buatan') }}"><i class="fas fa-chevron-right"></i> Destinasi Buatan</a></li>
-                    <li><a href="{{ url('/destinasi/budaya') }}"><i class="fas fa-chevron-right"></i> Destinasi Budaya</a></li>
-                    <li><a href="{{ url('/geosite/tele') }}"><i class="fas fa-chevron-right"></i> Tele</a></li>
-                    <li><a href="{{ url('/geosite/efrata') }}"><i class="fas fa-chevron-right"></i> Efrata</a></li>
-                    <li><a href="{{ url('/geosite/sihotang') }}"><i class="fas fa-chevron-right"></i> Sihotang</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="footer-title">Kontak</h5>
-                <ul class="footer-links contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> Danau Toba, Sumatera Utara</li>
-                    <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
-                    <li><i class="fas fa-envelope"></i> info@geotoba.com</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 GeoToba - Geopark Danau Toba. All rights reserved. | 
-                <a href="#">Privacy Policy</a> | 
-                <a href="#">Terms of Service</a>
-            </p>
-            <p style="margin-top: 8px;">
-                <i class="fas fa-globe" style="color: #c6a43b;"></i> 
-                Warisan Geologi Kelas Dunia - UNESCO Global Geopark
-            </p>
-        </div>
-    </div>
-</footer>
+
 
 <script>
     // DATA BERITA KOSONG - NANTI DIISI DENGAN CRUD
