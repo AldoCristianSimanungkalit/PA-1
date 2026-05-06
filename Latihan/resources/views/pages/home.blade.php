@@ -1051,7 +1051,7 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="/image/warisan.png" alt="Danau Toba">
+                    <img src="/image/toba.jpg" alt="Danau Toba">
                 </div>
             </div>
         </div>
