@@ -40,20 +40,31 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
-.flag-img {
-    width: 65px;
-    border-radius: 5px;
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+    margin-right: auto;
+}
+.logo-img {
+    height: 56px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.flag-img,
+.del-img {
+    height: 56px;
+    width: auto;
+    border-radius: 8px;
 }
 .logo-divider {
     width: 1px;
-    height: 28px;
+    height: 36px;
     background: rgba(255,255,255,0.3);
-}
-.del-img {
-    width: 32px;
-    border-radius: 5px;
 }
 .logo-text h4 {
     font-size: 0.85rem;
@@ -565,17 +576,17 @@ body {
         display: block;
     }
     .nav-logo {
-        gap: 12px;
+        gap: 10px;
     }
-    .flag-img {
-        width: 50px;
-    }
+    .logo-img,
+    .flag-img,
     .del-img {
-        width: 28px;
+        height: 44px;
+        width: auto;
     }
     .logo-text h4 {
         font-size: 0.8rem;
-    }
+    
     .hero {
         margin-top: 65px;
         min-height: 350px;
@@ -615,14 +626,14 @@ body {
     .nav-logo {
         gap: 8px;
     }
-    .flag-img {
-        width: 40px;
-    }
+    .logo-img,
+    .flag-img,
     .del-img {
-        width: 22px;
+        height: 34px;
+        width: auto;
     }
     .logo-divider {
-        height: 20px;
+        height: 22px;
     }
     .logo-text h4 {
         font-size: 0.7rem;

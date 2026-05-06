@@ -37,9 +37,22 @@
             justify-content: space-between;
             align-items: center;
         }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .logo-img {
+            height: 56px;
+            width: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
         .nav-logo { display: flex; align-items: center; gap: 16px; }
         .flag-img { width: 70px; height: auto; border-radius: 5px; }
-        .logo-divider { width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
+        .logo-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.3); }
         .del-img { width: 35px; height: auto; border-radius: 5px; }
         .logo-text h4 { font-size: 0.9rem; font-weight: 700; color: white; }
         .logo-text p { font-size: 0.45rem; color: rgba(255,255,255,0.6); }
@@ -225,6 +238,7 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hamburger { display: block; }
+            .logo-img { height: 44px; }
             .hero-title { font-size: 2rem; }
             .section { padding: 40px 0; }
             .galeri-grid { grid-template-columns: repeat(2, 1fr); }
@@ -234,6 +248,7 @@
         }
         @media (max-width: 576px) {
             .hero-title { font-size: 1.6rem; }
+            .logo-img { height: 34px; }
             .galeri-grid { grid-template-columns: 1fr; }
         }
     </style>
