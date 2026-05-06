@@ -290,11 +290,23 @@
     @stack('styles')
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">Bank Indonesia X IT DEL
-                <a class="navbar-brand" href="{{ url('/') }}">Geo<span>Toba</span></a>
-            </div>
+    <!-- LOGO FIXED (sama seperti home) -->
+<div class="logo-container">
+    <div class="flag-logo-wrapper">
+        <img src="{{ asset('image/bi.jpeg') }}" class="flag-img" alt="Bendera">
+    </div>
+    <div class="logo-divider"></div>
+    <div class="del-logo-wrapper">
+        <img src="{{ asset('image/del.jpeg') }}" class="del-img" alt="Del">
+    </div>
+    <div class="logo-divider"></div>
+    <div class="geotoba-wrapper">
+        <div>
+            <div class="geotoba-text">GEOTOBA</div>
+            <div class="geotoba-sub">Geopark Danau Toba</div>
+        </div>
+    </div>
+</div>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
