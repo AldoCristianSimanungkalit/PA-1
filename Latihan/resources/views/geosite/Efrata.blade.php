@@ -27,12 +27,12 @@
             background: rgba(0, 51, 102, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(198, 164, 59, 0.3);
-            padding: 12px 0;
+            padding: 0.8rem 0;
         }
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 5px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,14 +45,14 @@
             margin-right: auto;
         }
         .logo-img {
-            height: 56px;
+            height: 40px;
             width: auto;
-            border-radius: 8px;
+            border-radius: 6px;
             object-fit: cover;
         }
         .nav-logo { display: flex; align-items: center; gap: 16px; }
         .flag-img { width: 70px; height: auto; border-radius: 5px; }
-        .logo-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.3); }
+        .logo-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.3); }
         .del-img { width: 35px; height: auto; border-radius: 5px; }
         .logo-text h4 { font-size: 0.9rem; font-weight: 700; color: white; }
         .logo-text p { font-size: 0.45rem; color: rgba(255,255,255,0.6); }
@@ -238,7 +238,7 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hamburger { display: block; }
-            .logo-img { height: 44px; }
+            .logo-img { height: 32px; }
             .hero-title { font-size: 2rem; }
             .section { padding: 40px 0; }
             .galeri-grid { grid-template-columns: repeat(2, 1fr); }
@@ -248,7 +248,7 @@
         }
         @media (max-width: 576px) {
             .hero-title { font-size: 1.6rem; }
-            .logo-img { height: 34px; }
+            .logo-img { height: 28px; }
             .galeri-grid { grid-template-columns: 1fr; }
         }
     </style>
