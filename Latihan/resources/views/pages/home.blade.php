@@ -964,11 +964,7 @@
         .maps-container iframe { height: 220px; }
     }
 </style>
-  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">Bank Indonesia X IT DEL
-                <a class="navbar-brand" href="{{ url('/') }}">Geo<span>Toba</span></a>
-            </div>
+
 
 <!-- ==================== HERO SLIDER ==================== -->
 <section class="hero-section" id="home">
