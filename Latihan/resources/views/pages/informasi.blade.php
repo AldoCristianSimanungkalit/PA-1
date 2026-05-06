@@ -272,7 +272,7 @@
     <div class="geotoba-wrapper">
         <div>
             <div class="geotoba-text">GEOTOBA</div>
-            <div class="geotoba-sub">Geopark Danau Toba</div>
+            <div class="geotoba-sub">Geopark Samosir</div>
         </div>
     </div>
 </div>
