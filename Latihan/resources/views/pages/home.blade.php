@@ -1046,8 +1046,8 @@
                     <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
                     <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di Pulau Sibandang menanti Anda jelajahi.</p>
                     <div class="about-logos">
-                        <img src="/image/Logo/bi.jpeg" alt="Bank Indonesia">
-                        <img src="/image/Logo/del.jpeg" alt="Logo Del">
+                        <img src="/image/bi.jpeg" alt="Bank Indonesia">
+                        <img src="/image/del.jpeg" alt="Logo Del">
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
@@ -1070,7 +1070,7 @@
             <!-- TELE -->
             <div class="destinasi-item" data-aos="fade-up">
                 <div class="destinasi-image">
-                    <img src="{{ asset('image/tele/tele.jpeg') }}" alt="Tele">
+                    <img src="{{ asset('image/tele.jpeg') }}" alt="Tele">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">01 — GEOSITE</div>
@@ -1090,7 +1090,7 @@
             <!-- EFRATA -->
             <div class="destinasi-item reverse" data-aos="fade-up">
                 <div class="destinasi-image">
-                    <img src="{{ asset('image/efrata/efrata.jpeg') }}" alt="Efrata">
+                    <img src="{{ asset('image/efrata.jpeg') }}" alt="Efrata">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">02 — GEOSITE</div>
@@ -1110,7 +1110,7 @@
             <!-- SIHOTANG -->
             <div class="destinasi-item" data-aos="fade-up">
                 <div class="destinasi-image">
-                    <img src="{{ asset('image/sihotang/sihotang.jpg') }}" alt="Sihotang">
+                    <img src="{{ asset('image/sihotang.jpg') }}" alt="Sihotang">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">03 — GEOSITE</div>
