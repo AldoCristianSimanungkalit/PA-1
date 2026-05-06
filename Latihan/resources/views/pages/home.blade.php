@@ -964,25 +964,6 @@
         .maps-container iframe { height: 220px; }
     }
 </style>
-
-<!-- ==================== LOGO FIXED ==================== -->
-<div class="logo-container">
-    <div class="flag-logo-wrapper">
-        <img src="{{ asset('image/bi.jpeg') }}" class="flag-img" alt="Bendera">
-    </div>
-    <div class="logo-divider"></div>
-    <div class="del-logo-wrapper">
-        <img src="{{ asset('image/del.jpeg') }}" class="del-img" alt="Del">
-    </div>
-    <div class="logo-divider"></div>
-    <div class="geotoba-wrapper">
-        <div>
-            <div class="geotoba-text">GEOTOBA</div>
-            <div class="geotoba-sub">Geopark Danau Toba</div>
-        </div>
-    </div>
-</div>
-
 <!-- ==================== HERO SLIDER ==================== -->
 <section class="hero-section" id="home">
     <div class="slides-container">

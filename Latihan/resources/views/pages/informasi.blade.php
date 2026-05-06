@@ -49,7 +49,7 @@
     /* ========== HERO ========== */
     .sejarah-hero {
         height: 45vh;
-        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/sejarah-hero.jpg');
+        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/efrata.jpg');
         background-size: cover;
         background-position: center;
         display: flex;
@@ -262,11 +262,11 @@
 <!-- LOGO FIXED (sama seperti home) -->
 <div class="logo-container">
     <div class="flag-logo-wrapper">
-        <img src="{{ asset('image/Logo/bendera.png') }}" class="flag-img" alt="Bendera">
+        <img src="{{ asset('image/bi.jpeg') }}" class="flag-img" alt="Bendera">
     </div>
     <div class="logo-divider"></div>
     <div class="del-logo-wrapper">
-        <img src="{{ asset('image/Logo/del.jpeg') }}" class="del-img" alt="Del">
+        <img src="{{ asset('image/del.jpeg') }}" class="del-img" alt="Del">
     </div>
     <div class="logo-divider"></div>
     <div class="geotoba-wrapper">

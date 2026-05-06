@@ -311,7 +311,7 @@
         <!-- TELE -->
         <div class="dest-card" data-category="budaya sejarah petualangan" data-aos="fade-up" data-aos-delay="0">
             <div class="dest-img-wrapper">
-                <img src="/image/tele/tele.jpg" class="dest-img" alt="Tele">
+                <img src="/image/tele.jpg" class="dest-img" alt="Tele">
                 <span class="dest-badge budaya">DESA BUKIT TELE</span>
                 <div class="dest-overlay">
                     <p><i class="fas fa-map-marker-alt me-1"></i> Kecamatan Tele, Kabupaten Toba</p>
@@ -338,7 +338,7 @@
         <!-- EFRATA -->
         <div class="dest-card" data-category="budaya sejarah" data-aos="fade-up" data-aos-delay="100">
             <div class="dest-img-wrapper">
-                <img src="/image/efrata/efrata.jpg" class="dest-img" alt="Efrata">
+                <img src="/image/efrata.jpg" class="dest-img" alt="Efrata">
                 <span class="dest-badge budaya">DESA ADAT</span>
                 <div class="dest-overlay">
                     <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
@@ -365,7 +365,7 @@
         <!-- SIHOTANG -->
         <div class="dest-card" data-category="geologi petualangan" data-aos="fade-up" data-aos-delay="200">
             <div class="dest-img-wrapper">
-                <img src="/image/sihotang/sihotang.jpg" class="dest-img" alt="Sihotang">
+                <img src="/image/sihotang.jpg" class="dest-img" alt="Sihotang">
                 <span class="dest-badge geologi">GEOLOGI & PETUALANGAN</span>
                 <div class="dest-overlay">
                     <p><i class="fas fa-map-marker-alt me-1"></i> Pulau Sibandang</p>
