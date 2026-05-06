@@ -791,11 +791,8 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-<<<<<<< Updated upstream
                     <img src="/image/warisan.png" alt="Danau Toba">
-=======
                     <img src="/image/ALL.jpeg" alt="Danau Toba">
->>>>>>> Stashed changes
                 </div>
             </div>
         </div>
