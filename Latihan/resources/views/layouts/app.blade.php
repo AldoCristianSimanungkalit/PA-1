@@ -66,15 +66,15 @@
 }
 
 .logo-img {
-    height: 56px;
+    height: 40px;
     width: auto;
-    border-radius: 8px;
+    border-radius: 6px;
     object-fit: cover;
 }
 
 .logo-divider {
     width: 1px;
-    height: 36px;
+    height: 28px;
     background: rgba(255, 255, 255, 0.3);
 }
 
@@ -325,11 +325,11 @@
     }
     
     .logo-img {
-        height: 44px;
+        height: 32px;
     }
     
     .logo-divider {
-        height: 28px;
+        height: 24px;
     }
     
     .navbar-brand {
@@ -349,11 +349,11 @@
     }
     
     .logo-img {
-        height: 34px;
+        height: 28px;
     }
     
     .logo-divider {
-        height: 22px;
+        height: 20px;
     }
     
     .navbar-brand {
@@ -379,9 +379,9 @@
         <div class="container">
             <!-- LOGO SECTION - RAPI -->
             <div class="logo-wrapper">
-                <img src="{{ asset('image/logo/bi.jpeg') }}" alt="Bank Indonesia" class="logo-img">
+                <img src="{{ asset('image/Logo/bi.jpeg') }}" alt="Bank Indonesia" class="logo-img">
                 <div class="logo-divider"></div>
-                <img src="{{ asset('image/logo/del.jpeg') }}" alt="Logo Del" class="logo-img">
+                <img src="{{ asset('image/Logo/del.jpeg') }}" alt="Logo Del" class="logo-img">
                 <div class="logo-divider"></div>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Geo<span>Toba</span>
