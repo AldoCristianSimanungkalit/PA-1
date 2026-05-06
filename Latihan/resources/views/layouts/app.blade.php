@@ -66,15 +66,15 @@
 }
 
 .logo-img {
-    height: 40px;
+    height: 56px;
     width: auto;
-    border-radius: 6px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
 .logo-divider {
     width: 1px;
-    height: 28px;
+    height: 36px;
     background: rgba(255, 255, 255, 0.3);
 }
 
@@ -325,11 +325,11 @@
     }
     
     .logo-img {
-        height: 32px;
+        height: 44px;
     }
     
     .logo-divider {
-        height: 24px;
+        height: 28px;
     }
     
     .navbar-brand {
@@ -349,11 +349,11 @@
     }
     
     .logo-img {
-        height: 28px;
+        height: 34px;
     }
     
     .logo-divider {
-        height: 20px;
+        height: 22px;
     }
     
     .navbar-brand {
