@@ -292,6 +292,10 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">Bank Indonesia X IT DEL
+                <a class="navbar-brand" href="{{ url('/') }}">Geo<span>Toba</span></a>
+            </div>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
