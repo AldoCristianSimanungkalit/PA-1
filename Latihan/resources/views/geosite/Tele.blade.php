@@ -46,7 +46,7 @@
 <section class="hero">
     <div data-aos="fade-up">
         <h1 class="hero-title">Sihotang</h1>
-        <p class="hero-subtitle">Pulau Sibandang · Danau Toba</p>
+        <p class="hero-subtitle">isi ini</p>
     </div>
 </section>
 
@@ -73,7 +73,7 @@
                     <img src="/image/batu/sejarah2.jpg" alt="Batu Bahisan 2">
                 </div>
                 <div class="sejarah-text">
-                    <p>Menurut cerita turun temurun, batu-batu ini terbentuk dari letusan gunung berapi purba dan mengalami erosi selama ribuan tahun hingga membentuk formasi yang unik seperti sekarang. Proses alam yang panjang ini menciptakan keindahan geologi yang luar biasa.</p>
+                    <p>buat disini sejarah nya</p>
                 </div>
             </div>
             <!-- Sejarah 3: Gambar Kiri, Teks Kanan -->
@@ -82,7 +82,7 @@
                     <img src="/image/batu/sejarah3.jpg" alt="Batu Bahisan 3">
                 </div>
                 <div class="sejarah-text">
-                    <p>Masyarakat setempat menggunakan kawasan ini sebagai tempat ritual adat untuk meminta keselamatan dan hasil panen yang melimpah. Hingga kini, Batu Bahisan menjadi destinasi favorit bagi wisatawan yang ingin menikmati keindahan alam dan nilai sejarahnya.</p>
+                    <p>buat disini  sejarahnya</p>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
         <div class="section-title" data-aos="fade-up">
             <h2>Galeri</h2>
             <div class="divider"></div>
-            <p>Keindahan Batu Bahisan</p>
+            <p>isi</p>
         </div>
         <div class="galeri-grid" id="galeriGrid">
             <div class="galeri-item"><img src="/image/batu/galeri1.jpg" alt="Batu Bahisan 1"></div>
