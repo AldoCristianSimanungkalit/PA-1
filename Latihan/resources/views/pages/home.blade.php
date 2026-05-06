@@ -786,8 +786,8 @@
                     <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
                     <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di Pulau Sibandang menanti Anda jelajahi.</p>
                     <div class="about-logos">
-                        <img src="/image/Logo/bi.jpeg" alt="Bank Indonesia">
-                        <img src="/image/Logo/del.jpeg" alt="Logo Del">
+                        <img src="/image/logo/bi.jpeg" alt="Bank Indonesia">
+                        <img src="/image/logo/del.jpeg" alt="Logo Del">
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
