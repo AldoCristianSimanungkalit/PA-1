@@ -262,11 +262,13 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <span class="subtitle">PILIH KATEGORI</span>
-            <h2>Temukan Destinasi Favoritmu</h2>
+            <h2>Destinasi Favoritmu</h2>
             <div class="divider"></div>
             <p>Nikmati pengalaman wisata yang berbeda di setiap kategorinya</p>
         </div>
         
+
+
         <div class="category-grid">
             <!-- Destinasi Alam -->
             <a href="{{ url('/destinasi/alam') }}" class="category-card" data-aos="fade-up" data-aos-delay="0">
