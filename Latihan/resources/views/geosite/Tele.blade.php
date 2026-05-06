@@ -13,15 +13,14 @@
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="nav-container">
-        <div class="nav-logo">
-            <img src="[GANTI_LINK_BENDERA]" alt="Bendera" class="flag-img">
+        <div class="logo-wrapper">
+            <img src="{{ asset('image/logo/bi.jpeg') }}" alt="Bank Indonesia" class="logo-img">
             <div class="logo-divider"></div>
-            <img src="[GANTI_LINK_DEL]" alt="D el" class="del-img">
+            <img src="{{ asset('image/logo/del.jpeg') }}" alt="Logo Del" class="logo-img">
             <div class="logo-divider"></div>
-            <div class="logo-text">
-                <h4>GEOTOBA</h4>
-                <p>Geopark Danau Toba</p>
-            </div>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                Geo<span>Toba</span>
+            </a>
         </div>
         <div class="nav-menu">
             <a href="{{ url('/') }}" class="nav-link home-btn">Home</a>
