@@ -292,15 +292,6 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <!-- LOGO SECTION - LANGSUNG DARI FOLDER public/image/Logo/ -->
-            <div class="logo-wrapper">
-                <img src="{{ asset('image/bi.jpeg') }}" alt="Bank Indonesia" class="logo-img" loading="lazy">
-                <div class="logo-divider"></div>
-                <img src="{{ asset('image/del.jpeg') }}" alt="Logo Del" class="logo-img" loading="lazy">
-                <div class="logo-divider"></div>
-                <a class="navbar-brand" href="{{ url('/') }}">Geo<span>Toba</span></a>
-            </div>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
