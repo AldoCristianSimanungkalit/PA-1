@@ -1070,7 +1070,7 @@
             <!-- TELE -->
             <div class="destinasi-item" data-aos="fade-up">
                 <div class="destinasi-image">
-                    <img src="{{ asset('image/tele.jpeg') }}" alt="Tele">
+                    <img src="{{ asset('image/tele.jpg') }}" alt="Tele">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">01 — GEOSITE</div>
@@ -1090,7 +1090,7 @@
             <!-- EFRATA -->
             <div class="destinasi-item reverse" data-aos="fade-up">
                 <div class="destinasi-image">
-                    <img src="{{ asset('image/efrata.jpeg') }}" alt="Efrata">
+                    <img src="{{ asset('image/efrata.jpg') }}" alt="Efrata">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">02 — GEOSITE</div>
