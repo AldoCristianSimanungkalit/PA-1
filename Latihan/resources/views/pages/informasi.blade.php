@@ -49,7 +49,7 @@
     /* ========== HERO ========== */
     .sejarah-hero {
         height: 45vh;
-        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/sejarah-hero.jpg');
+        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/efrata.jpg');
         background-size: cover;
         background-position: center;
         display: flex;
