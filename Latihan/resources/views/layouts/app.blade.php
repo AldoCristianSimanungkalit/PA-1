@@ -290,10 +290,24 @@
     @stack('styles')
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-        <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">Bank Indonesia X IT DEL<span>   Geo<span>Toba</span></a>
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container">
+        <!-- Brand Wrapper untuk Logo dan Teks -->
+        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+            <!-- Wadah Logo -->
+            <div class="logo-container d-flex align-items-center me-2">
+                <img src="{{ asset('image/bi.jpeg') }}" alt="Logo BI" class="brand-logo">
+                <div class="logo-divider"></div>
+                <img src="{{ asset('image/del.jpeg') }}" alt="Logo IT Del" class="brand-logo">
             </div>
+            
+            <!-- Teks Brand -->
+            <span class="brand-text">
+                Bank Indonesia X IT DEL <span class="ms-2">Geo<span>Toba</span></span>
+            </span>
+        </a>
+    </div>
+</nav>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
