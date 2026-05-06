@@ -126,19 +126,13 @@
         z-index: 2;
         transform: scale(1);
     }
-    .slide::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(0,51,102,0.4) 0%, rgba(0,102,153,0.2) 100%);
-        animation: shimmer 3s infinite;
-    }
-    .slide-1 { background-image: url('/image/tele/slide1.jpg'); }
-    .slide-2 { background-image: url('/image/tele/slide2.jpg'); }
-    .slide-3 { background-image: url('/image/tele/slide3.jpg'); }
-    .slide-4 { background-image: url('/image/tele/slide4.jpg'); }
-    .slide-5 { background-image: url('/image/tele/slide5.jpg'); }
-
+    
+    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide1.jpg'); }
+    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide2.jpg'); }
+    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide3.jpg'); }
+    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide4.jpg'); }
+    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tele/slide5.jpg'); }
+    
     .hero-content {
         position: absolute;
         z-index: 10;
@@ -1041,25 +1035,25 @@
     </div>
 </section>
 
-<!-- ==================== ABOUT ==================== -->
-<section class="section section-light" id="about">
-    <div class="container">
-        <div class="about-feature-card" data-aos="fade-up">
-            <div class="about-content">
-                <h3>Warisan Geologi Kelas Dunia</h3>
-                <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
-                <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di sekitar Danau Toba menanti Anda jelajahi.</p>
-                <div class="about-logos">
-                    <img src="{{ asset('image/Logo/bi.jpeg') }}" alt="Bank Indonesia">
-                    <img src="{{ asset('image/Logo/del.jpeg') }}" alt="Logo Del">
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section section-light" id="about">
+        <div class="container">
+            <div class="about-feature-card" data-aos="fade-up">
+                <div class="about-content">
+                    <h3>Warisan Geologi Kelas Dunia</h3>
+                    <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
+                    <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. Tiga geosite unggulan di Pulau Sibandang menanti Anda jelajahi.</p>
+                    <div class="about-logos">
+                        <img src="/image/Logo/bi.jpeg" alt="Bank Indonesia">
+                        <img src="/image/Logo/del.jpeg" alt="Logo Del">
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="/image/warisan.png" alt="Danau Toba">
                 </div>
             </div>
-            <div class="about-image" data-aos="fade-left">
-                <img src="{{ asset('image/warisan.png') }}" alt="Danau Toba">
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!-- ==================== DESTINASI ==================== -->
 <section id="destinasi" class="section section-white">

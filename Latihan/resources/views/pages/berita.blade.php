@@ -45,7 +45,6 @@
         isolation: isolate;
     }
 
-    /* Animated Background Particles */
     .hero-particles {
         position: absolute;
         top: 0;
@@ -316,14 +315,13 @@
         border-radius: 3px;
     }
 
-    /* BERITA GRID - MODERN MAGAZINE STYLE */
+    /* BERITA GRID */
     .berita-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
     }
 
-    /* Featured Card - First card gets larger */
     .berita-card {
         background: white;
         border-radius: 24px;
@@ -359,7 +357,6 @@
         box-shadow: var(--shadow-xl);
     }
 
-    /* Image Container with Overlay */
     .berita-image {
         position: relative;
         height: 260px;
@@ -436,7 +433,6 @@
         color: var(--blue-dark);
     }
 
-    /* Content Area */
     .berita-content {
         padding: 24px;
         position: relative;
@@ -453,7 +449,6 @@
         letter-spacing: 1.5px;
         margin-bottom: 12px;
         font-weight: 600;
-        transition: var(--transition-fast);
     }
 
     .berita-date i {
@@ -485,7 +480,6 @@
         overflow: hidden;
     }
 
-    /* Read More Button */
     .readmore-wrapper {
         display: inline-flex;
         align-items: center;
@@ -534,7 +528,6 @@
         color: var(--gold);
     }
 
-    /* Stats Bar */
     .berita-stats {
         margin-top: 15px;
         padding-top: 15px;
@@ -636,7 +629,7 @@
         margin-bottom: 15px;
     }
 
-    /* MODAL - LUXURY DESIGN */
+    /* MODAL */
     .modal {
         display: none;
         position: fixed;
@@ -897,7 +890,7 @@
                     </div>
                     <h3 class="berita-title">{{ $item->judul }}</h3>
                     <p class="berita-excerpt">{!! Str::limit(strip_tags($item->konten), 120) !!}</p>
-                    <div class="readmore-wrapper" onclick="event.stopPropagation(); openModal({{ $item->id }})">
+                    <div class="readmore-wrapper" onclick="openModal({{ $item->id }})">
                         <span class="readmore-text">Baca Selengkapnya</span>
                         <div class="readmore-icon">
                             <i class="fas fa-arrow-right"></i>
@@ -956,7 +949,10 @@
         const berita = beritaData.find(b => b.id === id);
         if (!berita) return;
         
-        document.getElementById('modalImage').src = berita.gambar || '{{ asset("image/berita-default.jpg") }}';
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = berita.gambar || '{{ asset("image/berita-default.jpg") }}';
+        modalImage.alt = berita.judul;
+        
         document.getElementById('modalDate').innerText = new Date(berita.created_at).toLocaleDateString('id-ID', {
             day: 'numeric',
             month: 'long',
@@ -1011,5 +1007,8 @@
         easing: 'ease-out-quad'
     });
 </script>
+
+<!-- Font Awesome (jika belum ada di layout) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 @endsection
